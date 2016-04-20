@@ -1,5 +1,6 @@
 import csv
-import datetime
+from datetime import datetime
+
 
 def main():
 	with open('PVD.csv', 'rb') as f:
@@ -17,7 +18,7 @@ def main():
 			#create datetime object
 			date_object = datetime.strptime(string, '%I:%M %p %B %d %Y')
 			
-			epoch = datetime.datetime.utcfromtimestamp(0)
+			epoch = datetime.utcfromtimestamp(0)
 			
 
 
