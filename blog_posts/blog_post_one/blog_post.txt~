@@ -1,0 +1,57 @@
+Blog Post #1
+
+Group Members: 
+Erik Ronning - eronning
+Bruce Nguyen - blnguyen
+Ayan Tazhibayev - atazhiba
+
+##############################################################################
+
+What did you accomplish this week?
+
+This week, we were able to clean the data for weather so that it didn’t include the weather for the days that the Ratty wasn’t open. Additionally, we were able to work a little bit about how we are going to design our linear regression model given the data that we have.
+
+##############################################################################
+
+Did you face any unexpected challenges this week? How did you overcome them?
+
+There were minor challenges associated with the data cleaning that we were able to overcome with a couple hours on the web. The problem with our weather data was that it included dates we didn’t need. This may be the case with future datasets as well but since we have a python script already written, it shouldn’t be hard to modify and reuse this for the rest of our datasets. The issue with removing dates we didn’t need was that we had to turn the data we had, which was in string format, into a datetime object and then use that datetime object to remove rows of data that weren’t relevant. Even after converting the data into datetime objects, we had problems figuring out how we wanted to filter the data and eventually settled upon comparing them in terms of milliseconds using the datetime object. 
+Bigger issues are nested in the design of the linear regression model. We’re quite unsure how we want to treat each variable inside the regression. For example, one of the variables that we would like to use in our model is category of a main entree menu item. If we have more than two categories for menu items, which we most definitely do, we’re not quite sure what variable we can use, since dummy variables only deal with two possible outcomes. We’ve done minor research on categorical variables so we have some ideas of how we can work around this issue but none of us actually have solid experience with categorical variables in a regression. Additionally, in most cases, our variables will be categorical or binary. We have yet to think of a variable that could be modeled continuously with our data. This leads us to think that a linear regression may not be the best at predicting the flow of traffic in the ratty. However, since we are most comfortable with linear regressions, we feel that more research on whether or not this model would be predictive is the best bet. More research on categorical variables specifically. 
+
+##############################################################################
+
+What still needs to be done?
+
+We have a lot of data that we can use to our advantage at the moment but cleaning the data and then centralizing is the first of our priorities right now. We need to do this as fast as possible so that we can validate our hypotheses. For example, we suspect that seafood dishes attract a lot more customers to the Ratty. In order for us to explore this, we need to have cleaned the menu data categorically and then create a visualization. If our visualization doesn’t show us anything interesting, it may be a big red sign that will lead us to drop the category variable in our statistical model. So in essence, we have a lot of interesting variables that we want to include in our statistical model. However, we need to create visualizations with these variables to even see if they’re going to be predictive. Additionally, since we’re using the WiFi data as a proxy for flow of traffic in the Ratty, we need to be able to connect this data to the rest of the datasets so that we can identify any interesting trends. We plan to have this done before the next check up on Friday. This is important because if we don’t find any predictive variables with our current datasets, we may have to scrape more data.
+
+##############################################################################
+
+What new questions do you have?
+
+Since none of us are too fluent in creating statistical models, we are just unsure of how we should go about creating one. We want to stick with a linear regression model but the types of variables we have are giving us a bad feeling about the accuracy of our model. So some big questions we have are: What type of model should we build? If a linear regression model is still a valid choice, how do we model our variables in such a way that accuracy is optimized? We might opt to create a decision tree, which we just learned about in class today, as our variables deal a lot with categories.
+
+##############################################################################
+
+Did you create any interesting visualization? If you did, you may want to include them.
+
+We’re more focused on cleaning on all of the data and centralizing everything before creating any more visualizations. However, once all of the data is fully cleaned, we do have some interesting questions we would love to explore. Again, we plan to have this done really soon.
+
+##############################################################################
+Did you learn a new tool or method other people should check out? Do not get side-tracked with it, but you can for sure briefly explain it and include links.	
+
+R and STATA make linear regressions really easy. However, we’re not sure if this is allowed.
+
+##############################################################################
+Did you create some useful code fragments other people would be interested in?
+
+Don’t think so. The code that cleans our data is very specific to our datasets.
+
+##############################################################################
+What are your lessons learned? Would you do anything different the next time you had to do the task?
+
+We should have started cleaning our data much earlier than we chose to. This is because before any mild analysis can be done, the data must be cleaned accordingly so that it can be..well…analyzed. Designing the statistical model and analyzing the data simultaneously are not very smart ideas. This is because when you’re thinking about what variables you want to include in your model, you should have some sort of evidence as to why it should be included. Because we don’t have any solid visualizations on our data, the variables we are including in our statistical model are highly speculative. It may be the case that a lot of modifications will be done to our model as we start to get in more depth with our datasets.
+
+##############################################################################
+
+
+
