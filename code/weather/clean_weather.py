@@ -1,6 +1,7 @@
 import csv
 from datetime import datetime
 
+
 def unit_time_mills(epoch, dt):
 	return (dt - epoch).total_seconds() * 1000.0
 
@@ -44,8 +45,6 @@ def main():
 
 				if not ((may_16_15 <= date_mills <= sept_8_15) or (nov_25_15 <= date_mills <= nov_29_15) or (dec_22_15 <= date_mills <= jan_26_16) or (mar_26_16 <= date_mills <= apr_3_16) or (0 <= date_object.hour <= 7) or (19 < date_object.hour <= 23) or (date_object.hour == 7 and date_object.minute > 30)):
 					csv_writer.writerow(row)
-
-
 
 
 if __name__ == '__main__':

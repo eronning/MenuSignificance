@@ -1,1 +1,429 @@
-
+crn,full_number,number,title,seats_available,seats_total,location,start,end
+25637,UNIV0400-S02,UNIV0400,Beyond Narnia: The Literature of C.S. Lewis,-6,22,Smith-Buonanno Hall G12,54000,63000
+25636,UNIV0400-S01,UNIV0400,Beyond Narnia: The Literature of C.S. Lewis,-6,22,Smith-Buonanno Hall G01,54000,63000
+26366,UNIV0480-S01,UNIV0480,Buddhist Ethical Theory,1,20,J. Walter Wilson 403,54000,63000
+24949,UNIV0540-S01,UNIV0540,Introduction to Contemplative Studies,19,40,111 Thayer St-Watson Institute 112,54000,63000
+26010,UNIV1000-S01,UNIV1000,Cognitive Neuroscience of Meditation,0,30,Churchill House 106,54000,63000
+24244,UNIV1001-S01,UNIV1001,The Israeli-Palestinian Conflict: Contested Narratives,979,999,Smith-Buonanno Hall G18,39600,42600
+24583,UNIV1520-S01,UNIV1520,The Shaping of World Views,980,999,Wilson Hall 205,50400,53400
+25039,TAPS0030-S01,TAPS0030,Introduction to Acting and Directing,-3,18,Lyman Hall 002,34200,42600
+25046,TAPS0100-S01,TAPS0100,Playwriting I,14,14,Lyman Hall 005,46800,57000
+25040,TAPS0030-S02,TAPS0030,Introduction to Acting and Directing,2,18,Lyman Hall 002,54000,62400
+25059,TAPS0200-S01,TAPS0200,Playwriting II,10,14,Lyman Hall 005,46800,57000
+26249,TAPS0080-S01,TAPS0080,Asian American Theatre and Performance in Transnational Contexts,11,20,Lyman Hall 211,46800,51600
+25042,TAPS0220-S02,TAPS0220,Persuasive Communication,18,18,Lyman Hall 007,46800,57000
+25041,TAPS0220-S01,TAPS0220,Persuasive Communication,18,18,Lyman Hall 007,32400,42600
+25043,TAPS0220-S03,TAPS0220,Persuasive Communication,18,18,Lyman Hall 005,32400,42600
+25044,TAPS0220-S04,TAPS0220,Persuasive Communication,18,18,Lyman Hall 005,46800,57000
+24044,SIGN0200-S01,SIGN0200,"American Sign Language I, II",7,18,J. Walter Wilson 301,39600,42600
+25829,SIGN0200-S02,SIGN0200,"American Sign Language I, II",4,18,Smith-Buonanno Hall G01,32400,35400
+24045,SIGN0400-S01,SIGN0400,American Sign Language IV,10,18,J. Walter Wilson 301,46800,51600
+24409,SOC0170-S01,SOC0170,The Family,891,999,85 Waterman Street 130,32400,35400
+24410,SOC0300K-S01,SOC0300K,Inequalities and Health,2,20,J. Walter Wilson 503,54000,63000
+26141,SOC0310-S01,SOC0310,Theory and Practice of Engaged Scholarship (ESP Seminar),9,20,Wilson Hall 303,57600,66600
+24412,SOC1020-S01,SOC1020,Methods of Social Research,913,999,Wilson Hall 102,39600,42600
+24072,SOC1100-S01,SOC1100,Introductory Statistics for Social Research,41,144,List Art Center 120,32400,37200
+25598,RUSS0200-S01,RUSS0200,Introductory Russian,10,18,Wilson Hall 103,32400,35400
+25213,RUSS0110-S01,RUSS0110,Intensive Russian,11,18,111 Thayer St-Watson Institute 112,43200,46200
+25220,RUSS0320A-S01,RUSS0320A,"Dostoevsky's ""The Brothers Karamazov"" - The Art of the Novel",2,20,111 Thayer St-Watson Institute 116,54000,63000
+25601,RUSS0600-S01,RUSS0600,Advanced Russian,3,18,Wilson Hall 203,43200,46200
+25600,RUSS0400-S01,RUSS0400,Intermediate Russian,5,18,111 Thayer St-Watson Institute 112,39600,42600
+25599,RUSS0200-S02,RUSS0200,Introductory Russian,6,18,Wilson Hall 205,39600,42600
+25216,RUSS1120-S01,RUSS1120,Special Topics in Russian Studies II: Advanced Reading and Conversation,9,18,111 Thayer St-Watson Institute 116,43200,46200
+25217,RUSS1300-S01,RUSS1300,Russian Literature in Translation II: Tolstoy to Solzhenitsyn,990,999,Sayles Hall 005,50400,53400
+25214,RUSS1200-S01,RUSS1200,Russian Fantasy and Science Fiction,987,999,Barus & Holley 157,37800,42600
+25218,RUSS2810-S01,RUSS2810,Russian Poetry: Silver Age,34,40,Sayles Hall 300,54000,63000
+24565,POBS0200-S01,POBS0200,Elementary Portuguese,992,999,Wilson Hall 105,46800,51600
+24571,POBS0110-S01,POBS0110,Intensive Portuguese,989,999,Smith-Buonanno Hall G01,37800,42600
+24580,POBS0620-S01,POBS0620,Mapping Portuguese-Speaking Cultures: Portugal and Africa,983,999,159 George St-Meiklejohn House 102,52200,57000
+25224,POBS0990-S01,POBS0990,Mapping Cross-Cultural Identities,6,22,Salomon Center 202,54000,63000
+24572,POBS0400-S01,POBS0400,Writing and Speaking Portuguese,989,999,Smith-Buonanno Hall G12,36000,39000
+25602,POBS1600D-S01,POBS1600D,Portuguese Discoveries and Early Modern Globalization,36,40,94 Waterman Street- CSSJ 110,37800,43200
+26332,POBS1601H-S01,POBS1601H,"Contemporary Migrations: Movements, Experiences and Policies of Belonging",39,40,159 George St-Meiklejohn House 102,34200,43200
+24576,POBS1090-S01,POBS1090,Portuguese-speaking Cultures Via Film ,11,20,Wilson Hall 103,46800,51600
+25221,PLSH0200-S01,PLSH0200,Introductory Polish,997,999,Wilson Hall 106,36000,39000
+26503,PLSH0100-S01,PLSH0100,Introductory Polish,994,999,Wilson Hall 106,46800,49800
+25222,PLSH0400-S01,PLSH0400,Intermediate Polish,993,999,Wilson Hall 106,39600,42600
+26320,PHIL0110-S01,PHIL0110,The Nature of Fiction,989,999,Salomon Center 202,43200,46200
+25201,PHIL0300D-S01,PHIL0300D,Love and Friendship,971,999,Salomon Center 202,32400,37200
+24473,PHIL0100-S01,PHIL0100,Critical Reasoning,947,999,Wilson Hall 101,32400,35400
+24255,PHIL0360-S01,PHIL0360,Early Modern Philosophy,944,999,Bio Med Center 291,43200,46200
+24254,PHIL0010-S01,PHIL0010,The Place of Persons,912,999,Smith-Buonanno Hall 106,39600,42600
+24266,PHIL1520-S01,PHIL1520,Consciousness,18,50,Wilson Hall 101,46800,51600
+24261,PHIL0880-S01,PHIL0880,Ethical Themes in the Contemporary American Short Story,984,999,Rockefeller Library 205,50400,53400
+26007,PHIL1260-S01,PHIL1260,Plato,981,999,Salomon Center 202,67200,72000
+24855,NEUR0650-S01,NEUR0650,Biology of Hearing,877,999,Wilson Hall 102,46800,49800
+24851,NEUR0700-S01,NEUR0700,Psychoactive Drugs and Society,55,98,S. Frank Hall for Life Science MARC,54000,58800
+26705,NEUR0680-S01,NEUR0680,Introduction to Computational Neuroscience,976,999,S. Frank Hall for Life Science 450,37800,42600
+24859,NEUR1020-S01,NEUR1020,Principles of Neurobiology,898,999,Smith-Buonanno Hall 106,32400,37200
+24857,NEUR1600-S01,NEUR1600,Experimental Neurobiology,4,18, ,46800,64200
+24849,NEUR1040-S01,NEUR1040,Introduction to Neurogenetics,984,999,Smith-Buonanno Hall 201,37800,42600
+24798,NEUR1930C-S01,NEUR1930C,Development of the Nervous System,15,15,S. Frank Hall for Life Science 318,57600,66600
+24860,NEUR1940G-S01,NEUR1940G,Drugs and the Brain,3,15,S. Frank Hall for Life Science 350,61200,70200
+24856,NEUR1940B-S01,NEUR1940B,Neuroethology,15,20,Wilson Hall 109A,54000,63000
+25680,LANG2900-S01,LANG2900,The Theory and Practice of Foreign Language Learning and Teaching,27,40,195 Angell Street 202,32400,41400
+24879,MGRK0200-S01,MGRK0200,Introduction to Modern Greek,996,999,101 Thayer Street (VGQ 1st fl) 116A,43200,46200
+24918,MGRK0600-S01,MGRK0600,Advanced Modern Greek,998,999,Wilson Hall 106,32400,37200
+24920,MGRK0400-S01,MGRK0400,Intermediate Modern Greek,997,999,Wilbour Hall 102A,54000,58800
+24097,KREA0400-S01,KREA0400,Intermediate Korean,988,999,Sayles Hall 105,37800,42600
+24123,KREA0200-S02,KREA0200,Korean,5,18,Wilson Hall 103,43200,46200
+24088,KREA0200-S01,KREA0200,Korean,10,18,Sayles Hall 105,32400,35400
+24112,KREA0600-S01,KREA0600,Advanced Korean,12,18,Sayles Hall 104,46800,49800
+24120,KREA0920A-S01,KREA0920A,Korean Culture and Society,11,15,101 Thayer Street (VGQ 1st fl) 116A,46800,51600
+26326,EAST1060-S01,EAST1060,"Manly Men, Womanly Women, and Other Variations: The Quest for Becoming in Pre-Modern Chinese Lit",23,30,111 Thayer St-Watson Institute 112,52200,57000
+26064,EAST1950X-S01,EAST1950X,"Queer Japan: Culture, History and Sexuality",5,20,Wilson Hall 303,52200,57000
+26340,EAST1210-S01,EAST1210,Imagining Modern China,4,20,Sayles Hall 204,54000,63000
+24130,EAST1950H-S01,EAST1950H,"Translating Japanese: Short Fiction, Poetry, Film and Manga",5,20,J. Walter Wilson 302,57600,66600
+24118,EAST1500-S01,EAST1500,Returnees in China's Modernization,5,20,Sayles Hall 005,54000,63000
+26341,EAST1230-S01,EAST1230,Edo Woodblock Printing,11,20,Wilson Hall 303,57600,66600
+23966,EGYT1440-S01,EGYT1440,History of Egypt II,989,999,Sayles Hall 204,43200,46200
+23965,EGYT1320-S01,EGYT1320,Introduction to Classical Hieroglyphic Egyptian Writing and Language (Middle Egyptian II),991,999,Sayles Hall 300,36000,39000
+25605,EGYT0300-S01,EGYT0300,In the Beginning: Cosmos and Creation in the Ancient World,17,20,Wilbour Hall 301,37800,42600
+26334,EGYT2530-S01,EGYT2530,The Perception of Time and Space in Ancient Egypt,38,40, ,46800,55800
+24880,GREK0200-S01,GREK0200,Essentials of the Greek Language,994,999,Sayles Hall 104,43200,46200
+24876,GREK0110-S01,GREK0110,Introduction to Ancient Greek,993,999,Sayles Hall 305,39600,42600
+24916,GREK1010-S01,GREK1010,Introduction to Greek Drama,993,999,Sayles Hall 200,52200,57000
+24910,GREK1100-S01,GREK1100,Advanced Homer: The Odyssey,988,999,Wilson Hall 104,32400,37200
+24936,GREK2110F-S01,GREK2110F,Greek Palaeography and Premodern Book Cultures,35,40,48 College St-Macfarlane House 101,57600,66600
+24958,GREK1930B-S01,GREK1930B,Greek Epigraphy,991,999,48 College St-Macfarlane House 101,50400,53400
+25282,JUDS0050H-S01,JUDS0050H,Israel's Wars,10,20,J. Walter Wilson 403,46800,51600
+24240,JUDS0200-S01,JUDS0200,Elementary Hebrew,10,20,Wilson Hall 305,46800,49800
+24241,JUDS0400-S01,JUDS0400,Intermediate Hebrew,12,20,Wilson Hall 305,43200,46200
+24242,JUDS0600-S01,JUDS0600,"Issues in Contemporary Israeli Society, Politics, and Culture in Hebrew",16,20,Smith-Buonanno Hall 207,36000,39000
+25675,JUDS0090B-S01,JUDS0090B,Readings in Biblical Hebrew,997,999,163 George Street 206,32400,35400
+25465,JUDS0902-S01,JUDS0902,History of the Holocaust,8,40,Salomon Center 203,37800,42600
+24243,JUDS1602-S01,JUDS1602,Mishnah and Tosefta,37,40,163 George Street 206,54000,63000
+25888,JUDS1670-S01,JUDS1670,"Ancient Synagogues, Churches, and Mosques in Palestine",33,40,Wilson Hall 109A,57600,66600
+24655,ENVS1410-S01,ENVS1410,Environmental Law and Policy,954,999,Urban Environmental Lab 106,52200,57000
+24736,ENVS0495-S01,ENVS0495,Introduction to Environmental Social Science,8,73,CIT Center (Thomas Watson CIT) 165,32400,37200
+26361,ENVS0700C-S01,ENVS0700C,Extinction: A Global History,11,20,Urban Environmental Lab 106,54000,63000
+24656,ENVS1555-S01,ENVS1555,Urban Agriculture: The Importance of Localized Food Systems ,5,40,Urban Environmental Lab 106,46800,51600
+24738,ENVS1580-S01,ENVS1580,Environmental Stewardship and Resilience in Urban Systems,-11,36,Urban Environmental Lab 106,37800,42600
+24659,ENVS1925-S01,ENVS1925,Energy Policy and Politics,20,30,Urban Environmental Lab 106,54000,63000
+26346,ENVS1700B-S01,ENVS1700B,Watershed Policy + Management: Governance Beyond Borders,17,18,Urban Environmental Lab 106,34200,43200
+24660,ENVS1929-S01,ENVS1929,The Fate of the Coast:  Land Use and Public Policy in an Era of Rising Seas,3,20,Urban Environmental Lab 106,57600,62400
+24668,ENVS1755-S01,ENVS1755,Globalization and the Environment,6,20,Urban Environmental Lab 106,54000,63000
+26356,INTL1803F-S01,INTL1803F,Foreign Policy and the 2016 Presidential Election Campaign,4,20,J. Walter Wilson 503,57600,66600
+26350,INTL1803C-S01,INTL1803C,"Violence in Latin America: Causes, Consequences and Possibilities for Change",3,20,111 Thayer St-Watson Institute 112,57600,66600
+26355,INTL1803D-S01,INTL1803D,Questioning Growth: Should Nations Get Rich?,9,20,Barus & Holley 158,57600,66600
+26348,INTL1803H-S01,INTL1803H,Asian Security: Theory and Practice,4,20,J. Walter Wilson 303,57600,66600
+26357,INTL1803I-S01,INTL1803I,Richard Holbrooke and the Rise and Fall of American Power,3,20,111 Thayer St-Watson Institute 138,66600,75600
+26659,INTL1803J-S01,INTL1803J,Russia's Escape from Communism,12,20,J. Walter Wilson 501,54000,63000
+24921,SANS1400-S01,SANS1400,The Sanskrit Grammatical Tradition,995,999,Wilbour Hall 005,34200,39000
+24923,SANS0400-S01,SANS0400,Classical Sanskrit Story Literature,997,999,Wilbour Hall 005,32400,37200
+24878,SANS0200-S01,SANS0200,Elementary Sanskrit II,996,999,Wilson Hall 109A,43200,46200
+24039,HNDI0400-S01,HNDI0400,Intermediate Hindi-Urdu,994,999,195 Angell Street 211,46800,49800
+23987,HNDI0200-S01,HNDI0200,Beginning Hindi or Urdu,985,999,Wilson Hall 104,43200,46200
+24199,HIST0150B-S01,HIST0150B,The Philosophers' Stone: Alchemy From Antiquity to Harry Potter,968,999,Bio Med Center 291,39600,42600
+25091,HIST0150D-S01,HIST0150D,Refugees: A Twentieth-Century History,835,999,Metcalf Research Building AUD,43200,46200
+25876,HIST0247-S01,HIST0247,"Civilization, Empire, Nation: Competing Histories of the Middle East",935,999,Bio Med Center 291,37800,42600
+24636,HIST0257-S01,HIST0257,Modern American History: New and Different Perspectives,974,999,85 Waterman Street 015,32400,37200
+24156,HIST0234-S01,HIST0234,Modern Latin America ,954,999,Bio Med Center 081,46800,51600
+24106,HIST0286B-S01,HIST0286B,History of Medicine II: The Development of Scientific Medicine in Europe and the World,981,999,Wilson Hall 104,32400,35400
+23992,HIST0574A-S01,HIST0574A,"The Silk Road, Past and Present",2,20,Smith-Buonanno Hall 207,54000,63000
+24637,HIST0522G-S01,HIST0522G,An Empire and Republic: The Dutch Golden Age,12,20,Wilson Hall 109A,57600,66600
+24166,POLS0200-S01,POLS0200,Introduction to Comparative Politics,867,999,List Art Center 120,52200,57000
+24167,POLS0500-S01,POLS0500,Foundations of Political Analysis,935,999,CIT Center (Thomas Watson CIT) 165,36000,39000
+24165,POLS0110-S01,POLS0110,Introduction to Political Thought,913,999,MacMillan Hall 115,46800,51600
+24170,POLS1410-S01,POLS1410,International Security in a Changing World,894,999,Smith-Buonanno Hall 106,46800,51600
+24172,POLS1740-S01,POLS1740,Politics of Food,936,999,Bio Med Center 291,52200,57000
+26363,POLS1821J-S02,POLS1821J,Rhode Island Government and Politics,11,20,J. Walter Wilson 403,54000,63000
+25547,POLS1822A-S01,POLS1822A,Nuclear Weapons and International Politics,7,20,Sayles Hall 005,57600,66600
+24173,POLS1780-S01,POLS1780,Use of Symbols in American Politics,987,999,Sayles Hall 204,30600,35400
+24180,POLS1820J-S01,POLS1820J,Dynamics of Agenda Building,20,20,Sayles Hall 002,54000,63000
+24171,POLS1415-S01,POLS1415,Classics of Political Economy,900,999,Wilson Hall 102,37800,42600
+24757,GRMN0200-S03,GRMN0200,Beginning German,4,18,Barus & Holley 155,43200,46200
+24747,GRMN0110-S01,GRMN0110,Intensive Beginning German,5,16,190 Hope Street 203,32400,37200
+24756,GRMN0200-S02,GRMN0200,Beginning German,6,18,190 Hope Street 203,43200,46200
+24755,GRMN0200-S01,GRMN0200,Beginning German,3,18,190 Hope Street 203,39600,42600
+24759,GRMN0400-S02,GRMN0400,Intermediate German II,987,999,111 Thayer St-Watson Institute 116,43200,46200
+24758,GRMN0400-S01,GRMN0400,Intermediate German II,990,999,190 Hope Street 203,36000,39000
+24751,GRMN0600B-S01,GRMN0600B,Was ist Deutsch?,993,999,111 Thayer St-Watson Institute 114,36000,39000
+24760,LITR0100A-S01,LITR0100A,Introduction to Fiction,0,17,Wilson Hall 103,61200,70200
+24762,LITR0110A-S01,LITR0110A,Fiction I,0,17,J. Walter Wilson 201,63600,72600
+24761,LITR0100B-S01,LITR0100B,Introduction to Poetry,5,17,J. Walter Wilson 401,54000,63000
+24765,LITR0110B-S01,LITR0110B,Poetry I,0,17,J. Walter Wilson 301,63600,72600
+24764,LITR0110A-S03,LITR0110A,Fiction I,3,17,J. Walter Wilson 303,54000,63000
+24768,LITR0110D-S01,LITR0110D,Digital Language Art I,3,17,J. Walter Wilson 202,43200,52200
+24763,LITR0110A-S02,LITR0110A,Fiction I,-1,17,J. Walter Wilson 202,57600,66600
+24593,LITR0110E-S01,LITR0110E,Screenwriting I,-7,10,Granoff Ctr for Creative Arts N420,54000,63000
+24767,LITR0110B-S03,LITR0110B,Poetry I,2,17,J. Walter Wilson 502,61200,70200
+23980,CROL0400-S01,CROL0400,Advanced Haitian Creole,18,20,195 Angell Street 202,54000,63000
+26452,CROL1804A-S01,CROL1804A,"Framing Haiti: History, Culture, Politics + Literature",27,40,195 Angell Street 202,66600,75600
+23978,CROL0200-S01,CROL0200,Early Intermediate Creole,16,18,Sayles Hall 305,66600,75000
+25451,ETHN0790A-S01,ETHN0790A,Latina/o Literature,2,20,J. Walter Wilson 503,46800,51600
+25452,ETHN0512-S01,ETHN0512,Introduction to Latina/o Cultural Studies,-1,20,J. Walter Wilson 201,54000,63000
+25449,ETHN1890H-S01,ETHN1890H,Introduction to American Indian Studies,7,30,Barus & Holley 153,37800,42600
+25450,ETHN1900E-S01,ETHN1900E,Senior Seminar in Ethnic Studies,12,25,150 Power Street 104,30600,39600
+26206,ETHN1750A-S01,ETHN1750A,Immigrant Social Movements: Bridging Theory and Practice,-2,20,J. Walter Wilson 401,57600,66600
+26439,MES0165-S01,MES0165,How Did We Get Here: Middle East City from Antiquity to the Present,32,40,Sayles Hall 105,57600,66600
+25716,MES1450-S02,MES1450,The Archival of Gestures,995,999,111 Thayer St-Watson Institute 116,52200,57000
+24351,MATH0060-S01,MATH0060,Analytic Geometry and Calculus,989,999,Barus & Holley 161,37800,42600
+24353,MATH0090-S02,MATH0090,"Introductory Calculus, Part I",-2,30,Barus & Holley 157,50400,53400
+24352,MATH0090-S01,MATH0090,"Introductory Calculus, Part I",936,999,MacMillan Hall 115,39600,42600
+24359,MATH0100-S02,MATH0100,"Introductory Calculus, Part II",846,999,85 Waterman Street 130,36000,39000
+24360,MATH0100-S03,MATH0100,"Introductory Calculus, Part II",9,30,Wilson Hall 205,32400,37200
+24358,MATH0100-S01,MATH0100,"Introductory Calculus, Part II",12,30,Barus & Holley 161,32400,35400
+24361,MATH0100-S04,MATH0100,"Introductory Calculus, Part II",10,30,Smith-Buonanno Hall G12,52200,57000
+25011,GEOL0010-S01,GEOL0010,Face of the Earth,50,100,MacMillan Hall 115,46800,49800
+25016,GEOL0070-S01,GEOL0070,Introduction to Oceanography,925,999,MacMillan Hall 115,50400,53400
+25017,GEOL0230-S01,GEOL0230,Geochemistry: Earth and Planetary Materials and Processes,988,999,Geo-Chemistry Building 039,46800,51600
+25453,GEOL1330-S01,GEOL1330,Global Environmental Remote Sensing,970,999,MacMillan Hall 101,46800,51600
+25019,GEOL0240-S01,GEOL0240,Earth: Evolution of a Habitable Planet,986,999,Lincoln Field Building 209,39600,42600
+26376,SCSO0392-S02,SCSO0392,The Phoenix and the Hummingbird: Natural History from Antiquity to Evolution,11,20,Pembroke Hall 102,32400,37200
+25277,SCSO1000-S01,SCSO1000,Introduction to Science and Society: Theories and Controversies,6,30,Alumnae Hall 212,37800,42600
+25275,SCSO0700B-S01,SCSO0700B,Science and Social Controversy,1,20,J. Walter Wilson 201,57600,66600
+24478,HISP0200-S04,HISP0200,Basic Spanish,9,18,Alumnae Hall 212,46800,49800
+24475,HISP0200-S01,HISP0200,Basic Spanish,10,18,Sayles Hall 306,32400,35400
+24477,HISP0200-S03,HISP0200,Basic Spanish,8,18,Sayles Hall 105,43200,46200
+24479,HISP0300-S01,HISP0300,Intermediate Spanish I,14,18,Wilson Hall 205,36000,39000
+24476,HISP0200-S02,HISP0200,Basic Spanish,0,18,Sayles Hall 306,36000,39000
+24488,HISP0500-S02,HISP0500,Advanced Spanish I,4,18,Smith-Buonanno Hall G18,36000,39000
+24483,HISP0400-S01,HISP0400,Intermediate Spanish II,11,18,Smith-Buonanno Hall 101,32400,35400
+24486,HISP0400-S04,HISP0400,Intermediate Spanish II,5,18,Smith-Buonanno Hall 101,46800,49800
+24485,HISP0400-S03,HISP0400,Intermediate Spanish II,14,18,Smith-Buonanno Hall 101,43200,46200
+24487,HISP0500-S01,HISP0500,Advanced Spanish I,10,18,Smith-Buonanno Hall G18,32400,35400
+26359,DEVL1802R-S01,DEVL1802R,The History and Politics of Development in the Middle East,19,20,111 Thayer St-Watson Institute 138,57600,66600
+26255,DEVL1500-S01,DEVL1500,Methods in Development Research,6,20,111 Thayer St-Watson Institute 114,57600,66600
+26266,DEVL1802S-S01,DEVL1802S,Human Security and Humanitarian Response:  Increasing Effectiveness and Accountability,1,20,Wilson Hall 305,57600,66600
+26162,DEVL2010-S01,DEVL2010,Theory and Research in Development II,34,40, ,46800,55800
+24280,BEO1940B-S01,BEO1940B,BEO Capstone II: Entrepreneurship and Technology Management Track,991,999,Barus & Holley 157,52200,57000
+24279,BEO1940A-S01,BEO1940A,BEO Capstone II: Organizational Studies Track,971,999,85 Waterman Street 015,52200,57000
+24598,FREN0200-S01,FREN0200,Basic French,7,18,Wilson Hall 203,32400,35400
+24604,FREN0400-S01,FREN0400,Intermediate French II,4,18,Wilson Hall 303,36000,39000
+24601,FREN0200-S04,FREN0200,Basic French,0,18,Wilson Hall 303,37800,42600
+24602,FREN0200-S05,FREN0200,Basic French,2,18,Wilson Hall 303,32400,37200
+24605,FREN0400-S02,FREN0400,Intermediate French II,8,18,Wilson Hall 203,43200,46200
+24603,FREN0200-S06,FREN0200,Basic French,9,18,Wilson Hall 303,32400,35400
+24608,FREN0500-S02,FREN0500,Writing and Speaking French I,1,18,Sayles Hall 204,36000,39000
+24606,FREN0400-S03,FREN0400,Intermediate French II,5,18,Wilson Hall 103,46800,49800
+24609,FREN0500-S03,FREN0500,Writing and Speaking French I,0,18,Sayles Hall 204,39600,42600
+24613,FREN0600-S02,FREN0600,Writing and Speaking French II,4,18,Sayles Hall 005,36000,39000
+24091,JAPN0200-S02,JAPN0200,Basic Japanese,3,18,111 Thayer St-Watson Institute 112,36000,39000
+24087,JAPN0200-S01,JAPN0200,Basic Japanese,4,18,111 Thayer St-Watson Institute 112,32400,35400
+24111,JAPN0200-S03,JAPN0200,Basic Japanese,1,18,111 Thayer St-Watson Institute 112,46800,49800
+24101,JAPN0250-S01,JAPN0250,Advanced Beginning Japanese,14,18,Rockefeller Library 205,39600,42600
+24096,JAPN0400-S01,JAPN0400,Intermediate Japanese,10,18,Barus & Holley 163,37800,42600
+24105,JAPN0400-S02,JAPN0400,Intermediate Japanese,2,18,Barus & Holley 163,43200,46200
+24093,JAPN0600-S01,JAPN0600,Advanced Japanese I,14,18,Sayles Hall 105,36000,39000
+24115,JAPN0800-S01,JAPN0800,Advanced Japanese II,11,18,101 Thayer Street (VGQ 1st fl) 116A,50400,53400
+24124,JAPN0910A-S01,JAPN0910A,Classical Japanese,15,20,Sayles Hall 300,54000,63000
+25247,HIAA0460-S01,HIAA0460,"Muslims, Jews and Christians in Medieval Iberia",9,15,21 Brown Street ANNBROWN,54000,63000
+25826,HIAA0089-S01,HIAA0089,Contemporary Photography,932,999,List Art Center 110,39600,42600
+26279,HIAA0021-S01,HIAA0021,Arts of Asia,976,999,List Art Center 110,32400,37200
+26189,HIAA1304-S01,HIAA1304,"Spectacle! Games, Gladiators, Performance, and Ceremony in the Roman World",9,20,List Art Center 210,57600,66600
+26291,HIAA1101-S01,HIAA1101,Introduction to Architectural Design Studio ,3,12,List Art Center 220,54000,63000
+25710,HIAA0550-S01,HIAA0550,"Gold, Wool and Stone:  Painters and Bankers in Renaissance Tuscany",969,999,List Art Center 110,46800,51600
+26106,HIAA0660-S01,HIAA0660,Giotto to Watteau:  Introduction to the Art of Europe from Renaissance to French Revolution,973,999,List Art Center 220,52200,57000
+25845,HIAA1850H-S01,HIAA1850H,"Berlin: Architecture, Politics and Memory",0,12,List Art Center 220,57600,66600
+26642,HIAA1305-S01,HIAA1305,Pre-Columbian Art + Architecture,15,20,List Art Center 220,46800,51600
+25352,ENGN0020-S01,ENGN0020,Transforming Society-Technology and Choices for the Future,887,999,Barus & Holley 168,39600,42600
+24882,CLAS0210B-S01,CLAS0210B,Death in Ancient Greece,9,20,Sayles Hall 200,46800,51600
+24915,CLAS0850-S01,CLAS0850,Mythology of India,987,999,Wilson Hall 205,52200,57000
+24937,CLAS1120M-S01,CLAS1120M,Plato,994,999,Salomon Center 202,67200,72000
+24875,CLAS1120R-S01,CLAS1120R,Social Conflict and Political Factions in the Roman Republic,992,999,Sayles Hall 200,39600,42600
+24911,CLAS1160-S01,CLAS1160,Classics of Indian Literature,990,999,111 Thayer St-Watson Institute 138,37800,42600
+25199,CLAS1420-S01,CLAS1420,The Culture of Death in Ancient Rome,996,999,Wilson Hall 109A,50400,53400
+24881,CLAS1120U-S01,CLAS1120U,The American Presidents and the Western Tradition,947,999,Wilson Hall 101,46800,49800
+25468,CLAS1750R-S01,CLAS1750R,Holy Places and Sacred Spaces in Ancient Greece,12,17,Rockefeller Library 205,36000,39000
+25068,CLAS1220-S01,CLAS1220,The Fall of Empires and Rise of Kings: Greek History 479 to 323 BC,983,999,Wilson Hall 101,36000,39000
+24884,CLAS1750L-S01,CLAS1750L,Erotic Desire in the Premodern Mediterranean,16,25,70 Brown Street 130,46800,51600
+25094,VISA0100-S02,VISA0100,Studio Foundation,1,19,List Art Center 325,36000,42600
+25092,VISA0100-S01,VISA0100,Studio Foundation,-2,19,List Art Center 225,46800,53400
+25095,VISA0100-S03,VISA0100,Studio Foundation,1,19,List Art Center 325,57600,64200
+25096,VISA0100-S04,VISA0100,Studio Foundation,2,19,List Art Center 225,57600,64200
+25100,VISA0100-S08,VISA0100,Studio Foundation,5,19,List Art Center 225,57600,64200
+25101,VISA0100-S09,VISA0100,Studio Foundation,-1,19,List Art Center 325,57600,64200
+26065,VISA0100-S10,VISA0100,Studio Foundation,6,19,List Art Center 325,46800,53400
+25098,VISA0100-S06,VISA0100,Studio Foundation,4,19,List Art Center 225,36000,42600
+25097,VISA0100-S05,VISA0100,Studio Foundation,2,19,List Art Center 325,68400,75000
+23838,EDUC0410E-S01,EDUC0410E,Empowering Youth: Insights from Research on Urban Adolescents,-2,20,11 Benevolent Street - Arnold LOUNGE,43200,46200
+23847,EDUC0610-S01,EDUC0610,Brown v. Board of Education,10,20,J. Walter Wilson 403,57600,66600
+25885,EDUC0950-S01,EDUC0950,Learning About Learning: Classrooms in Context,18,40,Barus & Holley 141,67200,72000
+23828,EDUC0850-S01,EDUC0850,History of Intercollegiate Athletics,12,30,Barus & Holley 165,37800,42600
+26636,EDUC1035-S01,EDUC1035,"Decolonizing African Education: Student Activism and Social Change, 1960-present",991,999,111 Thayer St-Watson Institute 138,32400,37200
+26657,EDUC1038-S01,EDUC1038,Contemporary Indigenous Education in North America,2,30,J. Walter Wilson 301,30600,35400
+23837,EDUC1100-S01,EDUC1100,Introduction to Qualitative Research Methods,5,20,111 Thayer St-Watson Institute 138,54000,63000
+24289,PHYS0040-S02,PHYS0040,Basic Physics,901,999,Barus & Holley 166,43200,46200
+24288,PHYS0040-S01,PHYS0040,Basic Physics,862,999,Barus & Holley 166,39600,42600
+25828,ARCH0412-S01,ARCH0412,From Gilgamesh to Hector: Heroes of the Bronze Age,19,35,Rhode Island Hall 108,43200,46200
+26387,ARCH0340-S01,ARCH0340,Bad Things: Archaeologies of New World Vices,23,50,Rhode Island Hall 108,50400,53400
+26208,ARCH0525-S01,ARCH0525,The Other Side of Rome: Daily Life in the Roman Empire,18,50,Rhode Island Hall 108,39600,42600
+26331,ARCH1105-S01,ARCH1105,The Face of Power: Representing Roman Emperors,39,50,Rhode Island Hall 108,37800,42600
+26269,ARCH1125-S01,ARCH1125,Building an Empire: The Sacred and Civic Architecture of Ancient Rome,24,35,Rhode Island Hall 008,46800,49800
+25200,LATN1060J-S01,LATN1060J,Ovid Heroides,988,999,111 Thayer St-Watson Institute 114,37800,42600
+24869,LATN0200-S01,LATN0200,Essentials of the Latin Language,994,999,111 Thayer St-Watson Institute 138,32400,35400
+24868,LATN1060E-S01,LATN1060E,Livy,994,999,111 Thayer St-Watson Institute 114,32400,35400
+24874,LATN0400-S01,LATN0400,Introduction to Latin Literature,996,999,Sayles Hall 305,36000,39000
+24917,LATN1110H-S01,LATN1110H,Literature at the Court of Charlemagne,988,999,21 Brown Street ANNBROWN,50400,53400
+24870,LATN0110-S01,LATN0110,Introduction to Latin,997,999,J. Walter Wilson 402,32400,35400
+24877,LATN1810-S01,LATN1810,Survey of Republican Literature,986,999,Wilson Hall 103,39600,42600
+24935,LATN2120C-S01,LATN2120C,Graduate Seminar:  Apuleius,37,40,48 College St-Macfarlane House 101,54000,63000
+24437,ECON0110-S01,ECON0110,Principles of Economics,681,999,Salomon Center DECI,32400,35400
+24222,COLT0510C-S01,COLT0510C,The World of Lyric Poetry,15,20,Marston Hall 209,32400,37200
+25773,COLT0610X-S01,COLT0610X,Convulsive Beauty: Hysteria and the Arts,6,30,Barus & Holley 153,43200,46200
+24815,COLT0812B-S01,COLT0812B,"What is Colonialism? - Archives, Texts and Images",986,999,Granoff Ctr for Creative Arts 220,52200,57000
+25611,COLT0812F-S01,COLT0812F,Exotic Encounters: Travel Literature in the Age of Exploration,996,999,101 Thayer Street (VGQ 1st fl) 116A,39600,42600
+25767,COLT0711F-S01,COLT0711F,Arabic Literature: The Qur'an to Darwish,7,20,Wilson Hall 204,57600,66600
+25665,PHP0310-S01,PHP0310,Health Care in the United States,536,999,Salomon Center DECI,43200,46200
+26161,PHP0030-S01,PHP0030,Health of Hispaniola,0,20,Alumnae Hall 212,67200,72000
+25666,PHP1100-S01,PHP1100,Comparative Health Care Systems,2,30,121 South Main Street 241,39600,44400
+26762,PHP1820-S01,PHP1820,Designing Education for Better Prisoner and Community Health,-1,24,121 South Main Street 331,57600,62400
+25740,PHP1910-S01,PHP1910,Public Health Senior Seminar,-4,40,Wilson Hall 309,54000,63000
+24845,PHP1680N-S01,PHP1680N,"Tobacco, Smoking, and the Evil Empire",24,40,121 South Main Street 259,46800,55200
+25721,PHP1500-S01,PHP1500,Global Health Nutrition  ,987,999,Smith-Buonanno Hall 101,52200,57000
+25667,PHP1530-S01,PHP1530,"Case Studies in Public Health: The Role of Governments, Communities and Professions",10,40,121 South Main Street 241,54000,62400
+25737,PHP1400-S01,PHP1400,HIV/AIDS in Africa: A Multidisciplinary Approach to Support HIV/AIDS Care and Treatment Programs,7,25,Smith-Buonanno Hall 101,57600,66600
+24844,PHP1600-S01,PHP1600,"Obesity in the 21st Century: Causes, Consequences and Countermeasures",2,30,Barus & Holley 157,54000,63000
+24777,APMA0340-S01,APMA0340,"Methods of Applied Mathematics I, II",914,999,Smith-Buonanno Hall 106,43200,46200
+24776,APMA0330-S01,APMA0330,"Methods of Applied Mathematics I, II",937,999,CIT Center (Thomas Watson CIT) 165,43200,46200
+24778,APMA0350-S01,APMA0350,"Methods of Applied Mathematics I, II",946,999,MacMillan Hall 115,36000,39000
+24775,APMA0160-S01,APMA0160,Introduction to Scientific Computing,938,999,Wilson Hall 301,32400,35400
+24780,APMA0650-S01,APMA0650,Essential Statistics,816,999,85 Waterman Street 130,32400,37200
+24779,APMA0360-S01,APMA0360,"Methods of Applied Mathematics I, II",916,999,Wilson Hall 302,37800,42600
+24781,APMA1080-S01,APMA1080,Inference in Genomics and Molecular Biology,20,30,CIT Center (Thomas Watson CIT) 241,37800,42600
+25554,APMA1070-S01,APMA1070,Quantitative Models of Biological Systems,982,999,Barus & Holley 163,32400,35400
+24783,APMA1360-S01,APMA1360,Topics in Chaotic Dynamics,987,999,Smith-Buonanno Hall G13,46800,49800
+24782,APMA1200-S01,APMA1200,Operations Research: Probabilistic Models,872,999,Kassar House FOX,50400,53400
+24537,ENGL0150E-S01,ENGL0150E,Love and Friendship,0,20,Sayles Hall 105,54000,63000
+25122,ENGL0100R-S01,ENGL0100R,"American Histories, American Novels",953,999,Wilson Hall 309,32400,37200
+24528,ENGL0100Q-S01,ENGL0100Q,How Poems See,964,999,Bio Med Center B13,39600,42600
+24535,ENGL0150S-S01,ENGL0150S,The Roaring Twenties,-1,20,Wilson Hall 104,37800,42600
+25006,ENGL0150X-S01,ENGL0150X,The Claims of Fiction,7,20,J. Walter Wilson 502,54000,63000
+25123,ENGL0150V-S01,ENGL0150V,James and Wharton,9,20,Wilson Hall 204,37800,42600
+25119,ENGL0200F-S01,ENGL0200F,The Spectacle of War in 20th-Century American Literature and Film,0,17,J. Walter Wilson 303,43200,46200
+25118,ENGL0200E-S01,ENGL0200E,Fictional Brains: Reading Artificial Intelligence and Cognition,-7,17,J. Walter Wilson 201,39600,42600
+25120,ENGL0200H-S01,ENGL0200H,Writing the Black Diaspora: Speaking Truth to Power ,1,17,J. Walter Wilson 201,46800,49800
+25117,ENGL0200D-S01,ENGL0200D,Intimate Horrors: Encountering the Uncanny in Literature and Film,-3,17,J. Walter Wilson 402,43200,46200
+25248,CSCI0040-S01,CSCI0040,Introduction to Scientific Computing and Problem Solving,934,999,Smith-Buonanno Hall 106,52200,57000
+23981,EINT2200-S01,EINT2200,Academic Interactions,999,999,Sayles Hall 200,43200,46200
+23983,EINT2400-S01,EINT2400,Speaking Professionally for Internationals,993,999,Sayles Hall 300,32400,35400
+23982,EINT2300-S01,EINT2300,Negotiating an American Classroom,992,999,Sayles Hall 200,32400,35400
+23985,EINT2500-S01,EINT2500,Advanced Articulation Tutorial,991,999,Sayles Hall 300,43200,46200
+23984,EINT2400-S02,EINT2400,Speaking Professionally for Internationals,995,999,J. Walter Wilson 201,32400,35400
+24109,CHIN0200-S03,CHIN0200,Basic Chinese,3,18,Sayles Hall 306,46800,49800
+25545,CHIN0250-S01,CHIN0250,Advanced Beginning Chinese,12,18,54 College St-Gerard House 204,36000,39000
+24113,CHIN0200-S04,CHIN0200,Basic Chinese,14,18,Sayles Hall 306,50400,53400
+24083,CHIN0200-S01,CHIN0200,Basic Chinese,8,18,Sayles Hall 205,28800,31800
+24110,CHIN0400-S02,CHIN0400,Intermediate Chinese,-1,18,Sayles Hall 205,46800,49800
+24089,CHIN0200-S02,CHIN0200,Basic Chinese,4,18,Sayles Hall 205,32400,37200
+24114,CHIN0400-S03,CHIN0400,Intermediate Chinese,15,18,Sayles Hall 002,50400,53400
+24084,CHIN0600-S01,CHIN0600,Advanced Modern Chinese I,13,18,Sayles Hall 305,32400,35400
+24102,CHIN0400-S01,CHIN0400,Intermediate Chinese,5,18,Sayles Hall 205,43200,46200
+24095,CHIN0600-S02,CHIN0600,Advanced Modern Chinese I,6,18,Sayles Hall 306,37800,42600
+24500,ITAL0200-S01,ITAL0200,Elementary Italian,12,18,190 Hope Street 102,37800,42600
+24504,ITAL0300-S01,ITAL0300,Intermediate Italian I,15,18,J. Walter Wilson 201,43200,46200
+24506,ITAL0400-S02,ITAL0400,Intermediate Italian II,10,18,J. Walter Wilson 301,43200,46200
+24502,ITAL0200-S03,ITAL0200,Elementary Italian,14,18,190 Hope Street 102,46800,49800
+24501,ITAL0200-S02,ITAL0200,Elementary Italian,10,18,190 Hope Street 102,32400,37200
+24508,ITAL0600-S01,ITAL0600,Advanced Italian II,995,999,190 Hope Street 102,52200,57000
+24287,ITAL1020-S01,ITAL1020,Boccaccio's Decameron,33,40,Rockefeller Library 137,46800,51600
+24625,ITAL1320-S01,ITAL1320,Great Authors and Works of Italian Renaissance,997,999,J. Walter Wilson 401,52200,57000
+24507,ITAL1400P-S01,ITAL1400P,The Southern Question and the Colonial Mediterranean,29,40,190 Hope Street 102,57600,66600
+23914,BIOL0140A-S01,BIOL0140A,Topics in Science Communications: Science Journalism Practicum,2,10,Bio Med Center 217,61200,66600
+23886,BIOL0040-S01,BIOL0040,Nutrition for Fitness and Physical Activity,2,20,Sayles Hall 005,57600,66000
+23960,BIOL0160-S01,BIOL0160,"Plants, Food, and People",19,50,Bio Med Center B13,54000,59400
+23940,BIOL0080-S01,BIOL0080,Biotechnology Management,-3,20,Alumnae Hall 212,57600,66600
+25629,BIOL0150C-S01,BIOL0150C,Methods for Extraction and Analyzing Secondary Metabolites of Medicinal Plants,0,10, ,54000,61200
+23887,BIOL0190S-S01,BIOL0190S,"Phage Hunters, Part II",2,20,Smith-Buonanno Hall 101,54000,63000
+23880,BIOL0200-S01,BIOL0200,The Foundation of Living Systems,688,999,Salomon Center DECI,39600,42600
+24080,BIOL0180-S01,BIOL0180,The Biology of AIDS,970,999,Bio Med Center 081,30600,35400
+24709,CLPS0200-S01,CLPS0200,Human Cognition,813,999,85 Waterman Street 130,46800,51600
+24698,CLPS0800-S01,CLPS0800,Language and the Mind,940,999,Wilson Hall 301,50400,53400
+24711,CLPS0700-S01,CLPS0700,Social Psychology,48,300,Salomon Center DECI,52200,57000
+24865,CLPS0050B-S01,CLPS0050B,The Two Visual Systems: Visual Perception and Control of Action,15,20,Metcalf Research Building 230,46800,51600
+24701,CLPS1130-S01,CLPS1130,Psychology of Timing,7,20,Alumnae Hall 212,30600,35400
+24702,CLPS0040-S01,CLPS0040,Mind and Brain: Introduction to Cognitive Neuroscience,882,999,Metcalf Research Building AUD,32400,37200
+24689,CLPS0900-S01,CLPS0900,Quantitative Methods in Psychology,934,999,Kassar House FOX,36000,39000
+24696,CLPS0100-S01,CLPS0100,Learning and Conditioning,924,999,Bio Med Center 291,46800,49800
+24708,CLPS1290-S01,CLPS1290,Laboratory in Cognitive Processes,990,999,Metcalf Research Building 107,46800,51600
+24697,CLPS1250-S01,CLPS1250,Human Factors,0,25,Wilson Hall 205,46800,49800
+24959,MUSC0030-S01,MUSC0030,History of Jazz,947,999,Grant Recital 115,37800,42600
+25973,MUSC0400-S01,MUSC0400,Introduction to Music Theory,0,40,Orwig Music Hall 315,39600,42600
+24996,MUSC0560-S01,MUSC0560,Theory of Tonal Music,979,999,Orwig Music Hall 315,46800,51600
+24972,MUSC0611-S01,MUSC0611,Orchestra,943,999,Alumnae Hall AUD,69300,78300
+24979,MUSC0631-S02,MUSC0631,Jazz Band,38,40,Grant Recital 105,72000,76800
+24974,MUSC0631-S01,MUSC0631,Jazz Band,988,999,Grant Recital 105,65400,69600
+24997,MUSC0560-S02,MUSC0560,Theory of Tonal Music,980,999,Orwig Music Hall 315,37800,42600
+24971,MUSC0601-S01,MUSC0601,Chorus,973,999,Steinert Hall 105,66600,73200
+24973,MUSC0621-S01,MUSC0621,Wind Symphony,979,999,Grant Recital 105,64800,69600
+23969,ARAB0200-S01,ARAB0200,First-Year Arabic,10,18,Rockefeller Library 412,32400,35400
+23972,ARAB0200-S02,ARAB0200,First-Year Arabic,1,18,Wilson Hall 109,37800,42600
+23973,ARAB0200-S03,ARAB0200,First-Year Arabic,13,18,Wilson Hall 109,50400,53400
+25551,ARAB0200-S04,ARAB0200,First-Year Arabic,8,18,Wilson Hall 109,36000,39000
+23976,ARAB0600-S01,ARAB0600,Third-Year Arabic,4,18,Wilson Hall 109,43200,46200
+23971,ARAB0400-S02,ARAB0400,Second-Year Arabic,2,18,J. Walter Wilson 501,46800,49800
+23970,ARAB0400-S01,ARAB0400,Second-Year Arabic,11,18,Rockefeller Library 412,36000,39000
+23975,ARAB0800-S01,ARAB0800,Advanced Arabic Language + Culture,8,12,195 Angell Street 202,43200,48600
+26143,ARAB1200-S01,ARAB1200,Modern Arabic Literature in Exile,990,999,Wilson Hall 106,52200,57000
+24016,CHEM0330-S01,CHEM0330,"Equilibrium, Rate, and Structure",38,290,85 Waterman Street 130,37800,42600
+24805,URBN1000-S01,URBN1000,Fieldwork in the Urban Community,12,20,Maxcy Hall 109,37800,42600
+26119,URBN1500-S01,URBN1500,Understanding the City through Data,9,24,CIT Center (Thomas Watson CIT) 265,54000,63000
+24802,URBN1870J-S01,URBN1870J,The Politics of Community Organizing,5,20,Maxcy Hall 109,54000,63000
+26020,URBN1870T-S01,URBN1870T,Transportation: An Urban Planning Perspective,-5,15,Maxcy Hall 109,57600,66600
+26289,URBN1870U-S01,URBN1870U,Critical Urban Theory,0,20,Maxcy Hall 109,57600,66600
+26370,URBN1930-S01,URBN1930,Brown in Providence,13,20,Maxcy Hall 109,67200,72000
+24281,GNSS0120-S01,GNSS0120,Introduction to Gender and Sexuality Studies,884,999,Smith-Buonanno Hall 106,46800,49800
+25597,GNSS0090C-S01,GNSS0090C,Reproductive Health: Science and Politics,-2,20,11 Benevolent Street - Arnold LOUNGE,54000,63000
+26815,GNSS1500-S01,GNSS1500,Humanitarian Spaces,16,20,Wilson Hall 109,57600,66600
+26316,GNSS1651-S01,GNSS1651,Feminist Theory and Critiques of Capitalism,7,20,Pembroke Hall 202,46800,55800
+25596,GNSS1961B-S01,GNSS1961B,Queer Discipleship,2,20,Smith-Buonanno Hall 207,57600,66600
+25759,GNSS1961A-S01,GNSS1961A,The Matter of Abstraction: Feminism and the Arts,3,20,Smith-Buonanno Hall 206,54000,63000
+26816,GNSS2000-S01,GNSS2000,"Method, Evidence, Critique: Gender and Sexuality Studies across the Disciplines",10,15,Pembroke Hall 206,57600,66600
+24552,GNSS2020I-S01,GNSS2020I,Pembroke Research Seminar in Feminist Theory: Fatigue,4,8,Pembroke Hall 202,36000,45000
+24889,PLCY1200-S01,PLCY1200,Policy Analysis and Program Evaluation,9,40,54 College St-Gerard House 119,57600,66600
+26026,PLCY0700J-S01,PLCY0700J,Comparative Policies: Analyzing Policy Making Around the Globe,0,20,Sayles Hall 306,57600,66600
+24346,PLCY0100-S01,PLCY0100,Introduction to Public Policy,37,108,Wilson Hall 101,46800,51600
+26790,PLCY1700G-S01,PLCY1700G,Education Policy Challenges,13,20,Wilson Hall 203,54000,63000
+25543,PLCY1701M-S01,PLCY1701M,Juvenile Justice Institutions and Policy,0,20,Sayles Hall 105,57600,66600
+25635,PLCY1700V-S01,PLCY1700V,Nonprofit Organizations,0,20,J. Walter Wilson 201,54000,63000
+26008,PLCY1701W-S01,PLCY1701W,"Race, Gentrification, and the Policing of Urban Space",-4,20,J. Walter Wilson 501,57600,66600
+26822,PLCY1301A-S01,PLCY1301A,"Values, Policy, and Politics",14,20,59 Charlesfield Street 101,32400,41400
+26485,PLCY1802-S01,PLCY1802,Engaged Research Engaged Publics,9,25,CIT Center (Thomas Watson CIT) 227,54000,63000
+26450,PLCY1702A-S01,PLCY1702A,"Justice, Gender, and Markets",4,20,Alumnae Hall 212,57600,66000
+26016,HMAN1971S-S01,HMAN1971S,Introduction to iPhone/iPad Moviemaking Using 3-D and 4K Comparisons,0,20,Pembroke Hall 003,57600,66600
+26271,HMAN1971U-S01,HMAN1971U,Kabbalah: An Introduction to Jewish Mysticism,15,25,Pembroke Hall 003,54000,63000
+26019,HMAN1970K-S01,HMAN1970K,Law and Religion,11,30,Smith-Buonanno Hall G01,57600,66600
+24043,PRSN0600-S01,PRSN0600,Advanced Persian Language and Culture II,15,18,101 Thayer Street (VGQ 1st fl) 116A,52200,57000
+24041,PRSN0200-S01,PRSN0200,Basic Persian,16,18,Sayles Hall 305,46800,49800
+24042,PRSN0400-S01,PRSN0400,Intermediate Persian Language and Culture,14,18,Wilson Hall 206,37800,42600
+25173,AFRI1050A-S01,AFRI1050A,Advanced RPM Playwriting,13,14,Churchill House 106,57600,66600
+25781,AFRI0660-S01,AFRI0660,Activist Scholarship:  Research and Writing for Social Change,9,20,Churchill House 206,54000,63000
+25175,AFRI1050E-S01,AFRI1050E,RPM Playwriting,7,13,Churchill House 106,57600,66600
+25172,AFRI0990-S01,AFRI0990,Black Lavender: Black Gay/Lesbian Plays/Dramatic Constructions in the American Theatre,25,40,Churchill House 106,37800,42600
+25189,AFRI1060E-S01,AFRI1060E,West African Writers and Political Kingdom,9,20,Churchill House B9,54000,63000
+25174,AFRI1050D-S01,AFRI1050D,Intermediate RPM Playwriting,7,13,Churchill House 106,57600,66600
+26169,AFRI0760A-S01,AFRI0760A,Rastafarianism,946,999,MacMillan Hall 115,52200,57000
+25188,AFRI1020C-S01,AFRI1020C,The Afro-Luso-Brazilian Triangle,33,40,Churchill House B9,57600,66600
+26171,AFRI1360-S01,AFRI1360,"Africana Studies: Knowledge, Texts and Methodology",12,25,Barus & Holley 163,57600,66600
+26175,AFRI1060V-S01,AFRI1060V,Black Transnationalism,2,20,J. Walter Wilson 501,57600,66600
+25783,ASYR1010-S01,ASYR1010,Intermediate Akkadian,10,15, ,57600,66600
+25782,ASYR1725-S01,ASYR1725,Scientific Thought in Ancient Iraq,996,999,Wilbour Hall 301,52200,57000
+25607,ASYR1850-S01,ASYR1850,Collecting Knowledge in the Ancient World: Assurbanipal's Library in Context,10,15,Wilbour Hall 301,54000,63000
+23964,ASYR2950-S01,ASYR2950,Scribal and Scholarly Practices in Babylonia and Assyria,6,10,Wilbour Hall 301,54000,63000
+26273,RELS0052-S01,RELS0052,Love and Reason,967,999,Salomon Center 203,50400,53400
+24900,RELS0068-S01,RELS0068,Religion and Torture,916,999,S. Frank Hall for Life Science MARC,39600,42600
+26004,RELS0290D-S02,RELS0290D,Islamic Sexualities,13,60,Salomon Center 003,46800,51600
+26073,RELS0145-S01,RELS0145,"Karma, Rebirth and Liberation: Life and Death in South Asian Religions",4,40,Salomon Center 003,57600,66600
+24898,RELS0056-S01,RELS0056,Spiritual But Not Religious: Making Spirituality in America,930,999,Kassar House FOX,46800,49800
+24904,RELS0325-S01,RELS0325,How the Bible Became Holy,0,82,Bio Med Center 291,36000,39000
+24905,RELS0410-S01,RELS0410,Christianity in Late Antiquity,988,999,Wilson Hall 205,43200,46200
+25197,AMST0170A-S01,AMST0170A,American Slavery On Screen ,1,20,Granoff Ctr for Creative Arts N430,37800,42600
+26244,AMST0191W-S01,AMST0191W,American Indian Law and Legacies,2,17,J. Walter Wilson 202,32400,37200
+26253,AMST0191X-S01,AMST0191X,Troubled Pasts and Visual Cultural: Comparative Models from Providence to Pretoria,14,17,82 Waterman Street 101,52200,57000
+26252,AMST0191Z-S01,AMST0191Z,Food and Gender in U.S. Popular Culture ,-1,17,J. Walter Wilson 202,30600,35400
+24277,AMST1010-S01,AMST1010,Introduction to American Studies: American Icons,1,95,Barus & Holley 168,36000,39000
+26251,AMST0192A-S01,AMST0192A,Unsettled Things: Objects and Knowledge in Nineteenth-Century America,13,17,John Nicholas Brown Center SEM,37800,42600
+25461,AMST1600C-S01,AMST1600C,"The Anti-Trafficking Savior Complex: Saints, Sinners, and Modern-Day Slavery",32,100,Kassar House FOX,43200,46200
+25775,AMST1600D-S01,AMST1600D,Sports in American Society,-3,100,Barus & Holley 168,46800,49800
+24144,AMST1700I-S01,AMST1700I,Community Engagement with Health and the Environment,2,20,Alumnae Hall 212,54000,63000
+26095,ANTH0066D-S01,ANTH0066D,Who Owns the Past?,7,20,Giddings House 212,54000,63000
+25701,ANTH0066N-S01,ANTH0066N,Peoples and Cultures of Greater Mexico,11,16,130 Hope St (Feinstein Bldg.) 104,54000,63000
+25143,ANTH0100-S01,ANTH0100,Introduction to Cultural Anthropology,954,999,S. Frank Hall for Life Science MARC,36000,39000
+25872,ANTH0130-S01,ANTH0130,Myths Alive,996,999,Giddings House 212,36000,39000
+25148,ANTH0300-S01,ANTH0300,Culture and Health,886,999,Barus & Holley 166,46800,49800
+26228,ANTH0302-S01,ANTH0302,Anthropology of Gender and Globalization,987,999,Barus & Holley 165,67200,72000
+25168,ANTH0500-S01,ANTH0500,Past Forward: Discovering Anthropological Archaeology,980,999,Salomon Center 203,32400,37200
+25604,ANTH1030-S01,ANTH1030,Pre-Columbian Art and Architecture: A World That Matters,2,20,List Art Center 220,46800,51600
+25715,ANTH1151-S01,ANTH1151,Ethnographies of the Muslim Middle East,8,25,Barus & Holley 165,57600,66600
+26157,ANTH1120-S01,ANTH1120,Peoples and the Cultures of the Americas,11,25,Giddings House 212,32400,37200
