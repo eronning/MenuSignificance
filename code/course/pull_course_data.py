@@ -14,7 +14,7 @@ semesters = ["Fall%202015", "Spring%202016"]
 # initialise your csv file
 course_data = {}
 department_data = []
-with open('../../data/course_data.csv', 'wb') as outfile:
+with open('../../data/course/course_data.csv', 'wb') as outfile:
 	writer = csv.writer(outfile)
 	headers = ['crn','full_number','number','title','seats_available','seats_total','location','start','end'] # edit these as required
 	writer.writerow(headers)

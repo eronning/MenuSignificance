@@ -3,7 +3,7 @@ import os
 import json
 import urllib2
 
-data_path = '../../data/menu_data.json'
+data_path = '../../data/menu/menu_data.json'
 
 with open(data_path) as in_file:    
     data = json.load(in_file)

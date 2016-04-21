@@ -3,7 +3,7 @@ import sys
 import csv
 from collections import defaultdict
 
-data_path = '../../data/course_data.csv'
+data_path = '../../data/course/course_data.csv'
  
 def main():
 	'''

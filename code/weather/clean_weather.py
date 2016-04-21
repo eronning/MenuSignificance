@@ -6,10 +6,10 @@ def unit_time_mills(epoch, dt):
 	return (dt - epoch).total_seconds() * 1000.0
 
 def main():
-	with open('PVD_cleaned.csv', 'wb') as f1:
+	with open('../../data/weather/PVD_cleaned.csv', 'wb') as f1:
 		csv_writer = csv.writer(f1)
 		csv_writer.writerow(['date', 'temperature', 'wind speed', 'rain', 'snow'])
-		with open('PVD.csv', 'rb') as f:
+		with open('../../data/weather/PVD.csv', 'rb') as f:
 			csv_reader = csv.reader(f)
 			next(csv_reader, None)
 			epoch = datetime.utcfromtimestamp(0)

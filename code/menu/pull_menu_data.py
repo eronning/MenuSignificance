@@ -15,7 +15,7 @@ print "Fetching menu data"
 
 # initialise your csv file
 
-with open('../../data/menu_data.json', 'wb') as outfile:
+with open('../../data/menu/menu_data.json', 'wb') as outfile:
 	# itearte through years
 	for year in years:
 		# iterate through months in year
