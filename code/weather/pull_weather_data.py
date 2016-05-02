@@ -14,7 +14,7 @@ for station_id in station_ids:
 	print "Fetching data for station ID: %s" % station_id
 	try:
 		# initialise your csv file
-		with open('%s.csv' % station_id, 'wb') as outfile:
+		with open('../../data/weather/%s.csv' % station_id, 'wb') as outfile:
 			writer = csv.writer(outfile)
 			headers = ['date','temperature','wind speed', 'rain', 'snow'] # edit these as required
 			writer.writerow(headers)
