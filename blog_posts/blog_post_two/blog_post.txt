@@ -1,0 +1,69 @@
+Blog Post #2
+
+Group Members: 
+Erik Ronning - eronning
+Bruce Nguyen - blnguyen
+Ayan Tazhibayev - atazhiba
+
+##############################################################################
+
+What did you accomplish this week?
+
+This week, we are currently working on writing a script to combine all the datasets so that we have a centralized CSV. This is an incredibly crucial step in our final project and if not the most important one. After we accomplish this, the only task left is to create models with our centralized CSV. This should not be hard given the packages available online.
+
+##############################################################################
+
+Did you face any unexpected challenges this week? How did you overcome them?
+
+There are major challenges associated with data cleaning and integration. The major problem here is that we need to be able to design our linear regression model before we clean and combine our dataset. This is an incredibly difficult task and actually will probably result in a lot of trial and error because we currently have no baseline model to reference. What we’ll have to do is just hypothesize what would make the most sense in terms of formatting our variables and then proceed to clean and combine our data accordingly. The issue of not having a baseline model or any literature to refer to makes this step really hard and we’ll just have to take a huge leap.
+As we said earlier, we’re probably going to deal with a lot of trial and error. Right now we have some ideas of how we want to format our data and are going to implement our script with these intentions. Here are some of our ideas backed with reasoning.
+ Our data points will be in time intervals of 10 minutes apart. 
+This provides us with more data points to analyze
+Our menu items will only involve ratty entree dishes which will be sorted by categories that we create manually.
+This makes the variable categorical and also much more simpler to regress
+Our temperature will be continuous in celsius. 
+This makes sense intuitively and will probably be our only continuous variable
+We will have a bad and good weather variable.
+This has to do with snow or rain, both are considered bad weather. Or very bad weather.
+Rush time binary variable.
+This will be calculated using the course times. If we expect a lot of people to get out of class near lunch, we can expect a rush. Else if we expect a lot of people to have class near a mealtime, we can expect low traffic.
+We could have more variables depending on how many dimensions we’re looking to have. But right now, this seems like a solid start.
+
+
+##############################################################################
+What still needs to be done?
+Well really, just this script that will centralize all of our data. Once we have this done, we just need to run our linear regression and we will have reached our 100% goal. For this step, we aren’t expecting too much difficulty because of the packages that are online that can help us, as we aren’t implementing the regression itself. However, given the amount of time that we would have after getting the data formatted, it would be worthwhile in our opinion to create many linear regression models with the same variables but modeled differently. This will require us to re-clean the data but shouldn’t be too hard. The difficulty of this comes with trying to find different ways to run the regression. Additionally, a point that Vinh brought up that we would really like to take into consideration is running other statistical models on our dataset so that we could benchmark our linear regression. Because it is hard to find models that result in statistically significant results, this might actually be a better 125% goal for our project. This way, we get experience training many different statistical models that aren’t just linear regressions. This would give us a deeper understanding of machine learning and its implications. Going with our 125% would rather narrow our scope of data science to linear regressions and might not even be feasible given the data that we have. It might be the case that we’d need data that we won’t have access to. 
+##############################################################################
+
+What new questions do you have?
+
+So as if right now, we are confident we can achieve our 100% goal. We set our bar here pretty low to make sure that it was achievable. What questions we have now are what our 125% goal would be. We want to know what would make a solid project. The idea of exploring the linear regression model in depth and trying to find significance or exploring other and more complicated statistical models. We preferably would like to do the latter because we would learn a lot more but it really just depends on what would make a more solid final project.
+
+##############################################################################
+
+Did you create any interesting visualization? If you did, you may want to include them.
+
+We haven’t really thought of any interesting questions that we want to explore visually. Right now we are primarily concerned with what our linear regression should entail. Once we run our first regression, more questions may pop up that would require a visualization. 
+
+##############################################################################
+
+Did you learn a new tool or method other people should check out? Do not get side-tracked with it, but you can for sure briefly explain it and include links.	
+
+N/A
+
+##############################################################################
+
+Did you create some useful code fragments other people would be interested in?
+
+N/A
+
+##############################################################################
+
+What are your lessons learned? Would you do anything different the next time you had to do the task?
+
+Sometimes it is better to jump in the deep end of the pool. We were just so concerned about how our linear regression model would turn out and put too much thought into what it should be like. However, the best approach in this case would be to just make educated guesses about how to incorporate our variables. It is totally reasonable the rerun a regression with minor tweaks. In fact, that is what is going to be the case most of the time. With that in mind, we should’ve just created a very simple model to test the waters out and worked it out from there instead of trying to design a complicated regression model without any baseline. 
+
+##############################################################################
+
+
+
