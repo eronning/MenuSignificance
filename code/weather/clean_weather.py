@@ -41,7 +41,7 @@ def main():
 				# print string
 				date_object = datetime.strptime(string, '%I:%M %p %B %d %Y')
 				date_mills = unit_time_mills(epoch, date_object)
-				# print date_object.hour
+				# print date_object.hourd
 
 				if not ((may_16_15 <= date_mills <= sept_8_15) or (nov_25_15 <= date_mills <= nov_29_15) or (dec_22_15 <= date_mills <= jan_26_16) or (mar_26_16 <= date_mills <= apr_3_16) or (0 <= date_object.hour <= 7) or (19 < date_object.hour <= 23) or (date_object.hour == 7 and date_object.minute > 30)):
 					csv_writer.writerow(row)
