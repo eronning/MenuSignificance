@@ -1,0 +1,57 @@
+Blog Post #3
+
+Group Members: 
+Erik Ronning - eronning
+Bruce Nguyen - blnguyen
+Ayan Tazhibayev - atazhiba
+
+##############################################################################
+
+What did you accomplish this week?
+
+This week we were able to finish cleaning all of our data. This entails removing data which is timestamped at a insignificant time for our model, such as during winter break. After cleaning all of the data, we were able start working on formatting our data in a manner which allows for it to be used for a Linear Regression Model. We have been able to pull from portions of the menu information, such as making a dataset which contains whether or not meals are seafood. This simple boolean format of data allows for us to create a model and train on that data. On top of formatting some menu information for modelling, we were able to bucket all of the WiFi information. This information was bucketed per day of the year in 15 minute windows. Bucketing the information in such a manner will easily grant us the ability to determine how many people were in the Ratty on a certain day at a given time.
+
+##############################################################################
+
+Did you face any unexpected challenges this week? How did you overcome them?
+
+One of the challenges this week had to deal with the Brown API and the way they listed their foods. The first issue was determining what the key item was within the whole entire menu of the Ratty. To simplify our model, we decided to pick one item that we thought was the most important or main menu item at the Ratty. This turned out to be the first item listed in the bistro line by Brown’s API. However, even with the entire Ratty menu narrowed down into one item, it is still difficult to incorporate the item into the model. We initially wanted to go with turning this item into a categorical variable, listing certain foods under specific category such as “Asian”, “American”, or “Italian.” However, we realized this couldn’t be done because there are a lot of items that are too subjective to judge. Additionally, there is no data that we can reference online to categorize the menu items because the things the ratty serve seems to be pretty unique. Without the help of any data online, all of the categorizing will need to be done by hand. We weren’t sure if this was worth the time so for now, we are sticking with a simple binary variable for one category of food: seafood. The reason we chose seafood as the only category is because we think it would be relevant in explaining the flow of traffic given seafoods reputation for being luxurious and tasty. Another crucial problem was also the fact that the Brown API names the same item in many different ways. For example, “scrambled eggs” and “scarmbled eggs” reference the same item. As well as “turkey sandwich w/ gravy” and “turkey sandwich w/ gravy and mashed potatoes.” There are a lot of discrepancies in name conventions of the menu items. We thought we were going to consolidate the items by setting some coefficient threshold for Jaccard Similarity but changing the variable into a binary variable for seafood got rid of this issue. If we decide to implement a more difficult model, we’ll have to do this.
+
+##############################################################################
+
+What still needs to be done?
+
+We pretty much have everything done except for the fact that we need to train the linear regression model. We will do this after we integrate our data together, which shouldn’t take a long time, given we already have all the data clean and ready to be combined. The portion where we train our linear regression model should not be difficult at all because all we need to do is find a package online whose documentation is easy to understand and then use it to our advantage. To be able to interpret our linear regression model and its implications so that we can present it effectively may take a little time since we may need to read up on regressions. If our results are nonsensible, we are either going to explore other models, with the same final dataset, or explore different datasets with the same model. We have not figured out which path to take although at this point it would seem more reasonable to explore other statistical models given that retrieving more data would take too long 
+
+##############################################################################
+
+What new questions do you have?
+
+We are primarily concerned with the fact that our data is essentially “fabricated.” What we mean is that we actually only have data for around 120 days and we managed to extract around  only ~5-6k lines of data given the way we bucket our data. This is due to the fact that we did not have a large dataset to begin with. Mark Howison, who is the head of Brown CIS, grabbed us less than a year of data in the one-time pull for wifi data. This was originally fine, but after cleaning it, we came to the conclusion it was not nearly enough data for significant analysis. We weren’t able to see this earlier because the dates were all in milliseconds since epoch. Our entire dataset is constricted by this Wifi data. 
+
+##############################################################################
+
+Did you create any interesting visualization? If you did, you may want to include them.
+
+N/A
+
+##############################################################################
+
+Did you learn a new tool or method other people should check out? Do not get side-tracked with it, but you can for sure briefly explain it and include links.	
+
+N/A
+
+##############################################################################
+
+Did you create some useful code fragments other people would be interested in?
+
+N/A
+
+##############################################################################
+
+What are your lessons learned? Would you do anything different the next time you had to do the task?
+
+A lesson that we learned is that dealing with time objects in python can take time. Converting between multiple types of time storage can be time consuming. Cleaning data based on time took longer than we had originally anticipated. In the future we would allocate more time to dealing with time related coding tasks. Another lesson that we learned is that API’s don’t always clean their own data. For example, the Brown API’s menu information is stored with several different ways of saying scrambled eggs. This lack of cleaning data on the API side means that we have to put more time into cleaning data that we expected would come in a consistent format. In the future we would not plan for our data to always come in the correct format. We will plan to have to clean all of our data and not expect it to come in the right format. 
+
+##############################################################################
+

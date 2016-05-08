@@ -8,13 +8,12 @@ var bubble = d3.layout.pack()
     .padding(1.5);
 
 
-d3.csv("data/course_times.csv", function(data) {
+d3.csv("data/course/course_data.csv", function(data) {
 
 	var map = {};
 	for (i in data) {
 		// list of objects
 		var element = data[i];
-    /*console.log(element);*/
     var start_split = element.start.split(' ');
     var start_time = start_split[1];
 
@@ -46,7 +45,7 @@ d3.csv("data/course_times.csv", function(data) {
   }
   var hierarchy = {name: 'root', children: childNodes};
 
-  var svg = d3.select("#visual").append("svg")
+  var svg = d3.select("#course_bubbles").append("svg")
       .attr("width", diameter)
       .attr("height", diameter)
       .attr("class", "bubble");
@@ -70,7 +69,7 @@ d3.csv("data/course_times.csv", function(data) {
     node.append("text")
         .attr("dy", ".3em")
         .style("text-anchor", "middle")
-        .text(function(d) {console.log(d); return d.className.substring(0, d.r / 3); });
+        .text(function(d) { return d.className.substring(0, d.r / 3); });
 
  
 });

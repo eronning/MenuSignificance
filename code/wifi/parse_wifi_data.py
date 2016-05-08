@@ -4,21 +4,25 @@ import csv
 import time
 from datetime import datetime, timedelta
 from collections import defaultdict
+from operator import itemgetter
 
 data_path = '../../../wifi_info.csv'
 
 
 epoch = datetime.utcfromtimestamp(0)
 
+# get time in millis
 def unit_time_mills(epoch, dt):
 	return (dt - epoch).total_seconds() * 1000.0
 
+# get a time object from milliseconds
 def time_from_millis(millis):
     """Return UTC time that corresponds to milliseconds since Epoch."""
     return time.localtime(millis)
 
+# generate a key for a date
 def key_from_time(time):
-	return str(time.tm_yday) + "," + str(time.tm_year)
+	return str(time.tm_year) + "," + str(time.tm_mon) + "," + str(time.tm_yday) + "," + str(time.tm_wday)
 
 #Dates we are cleaning:
 #May 16, 2015 - September 8, 2015, summer break
@@ -51,26 +55,64 @@ def main():
 
 		for row in reader:
 			connect = int(row[0])
+			disconnect = int(row[1])
 			connect_time_object = time_from_millis(connect)
-			if valid_time(connect, connect_time_object):
+			disconnect_time_object = time_from_millis(disconnect)
+			# keep only valid connect and disconnect times -- make sure they are on the same day (people who leave devices in the ratty)
+			if valid_time(connect, connect_time_object) and valid_time(disconnect, 	disconnect_time_object) and connect_time_object.tm_yday == disconnect_time_object.tm_yday:
 				wifi_info = {
-				"connect": connect,
-				"disconnect": row[1],
+				"connect": connect_time_object,
+				"disconnect": disconnect_time_object,
 				"mac": row[2]
 				}
 				key = key_from_time(connect_time_object)
 				if key in wifi_data:
 					# perform logic here
 					date = wifi_data[key]
-					hr = connect_time_object.tm_hour
-					minute = connect_time_object.tm_min
-					minute_timeslot = minute - minute % 15
-					date[str(hr) + ":" + str(minute_timeslot)].append(wifi_info)
+					# get the connecting time values
+					connect_hr = int(connect_time_object.tm_hour)
+					connect_min = int(connect_time_object.tm_min)
+					# get the disconnecting time values
+					disconnect_hr = int(disconnect_time_object.tm_hour)
+					disconnect_min = int(disconnect_time_object.tm_min)
+					# set the timeslots
+					timeslot_hr = connect_hr
+					timeslot_min = connect_min
+					# fill the timeslots with a person until the connect and disconnect times meet
+					while timeslot_hr != disconnect_hr or timeslot_min != disconnect_min:
+						# add the person to the current timeslot
+						date[str(timeslot_hr) + ":" + str(timeslot_min)].append(wifi_info)
+						# update hr and min times
+						if timeslot_min == 59:
+							timeslot_min = 0
+							timeslot_hr += 1
+						else:
+							timeslot_min += 1
 				else:
 					wifi_data[key] = defaultdict(list)
 		
-		# DO SOMETHING WITH WIFI DATA WHICH IS CLEANED AND BUCKETED INTO 15 MINUTE TIMESLOTS
-		
+		# Clean information and write it to a csv
+		with open('../../../wifi_info_cleaned.csv', 'wb') as cf:
+			csv_writer = csv.writer(cf)
+			csv_writer.writerow(['year', 'month', 'year_day', 'week_day', 'hour', 'minute', 'num_people'])
+			wifi_time_data = []
+			# iterate through all days
+			for date in wifi_data:
+				date_data = date.split(",")
+				day = wifi_data[date]
+				# check if the day has any timeslots
+				if day:
+					# iterate through each timeslote
+					for timeslot in day:
+						timeslot_data = timeslot.split(":")
+						num_people = len(day[timeslot])
+						time = [int(date_data[0]), int(date_data[1]), int(date_data[2]), int(date_data[3]), int(timeslot_data[0]), int(timeslot_data[1]), num_people]
+						wifi_time_data.append(time)
+			# sort the information
+			sorted_wifi_data = sorted(wifi_time_data, key=itemgetter(0,1,2,4,5))
+			# write all of the information to a csv
+			for time in sorted_wifi_data:
+				csv_writer.writerow(time)
 	pass
 
 if __name__ == '__main__':

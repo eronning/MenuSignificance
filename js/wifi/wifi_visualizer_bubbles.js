@@ -17,7 +17,7 @@ var pack = d3.layout.pack()
     .size([diameter - 4, diameter - 4])
     .value(function(d) { return d.size; });
 
-d3.csv("data/4263.csv", function(data) {
+d3.csv("data/wifi/wifi_info.csv", function(data) {
 	var validTimePairs = new Array();
 	for (var i in data) {
 		var connect = toDate(data[i].connect_time);
@@ -60,7 +60,7 @@ d3.csv("data/4263.csv", function(data) {
     }
     var hierarchy = {name: "root", children: childNodes};
 
-    var svg = d3.select("#visual").append("svg")
+    var svg = d3.select("#wifi_bubbles").append("svg")
 	    .attr("width", diameter)
 	    .attr("height", diameter)
 	  	.append("g")
