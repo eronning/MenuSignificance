@@ -11,15 +11,18 @@ data_path = '../../../wifi_info.csv'
 
 epoch = datetime.utcfromtimestamp(0)
 
+# get time in millis
 def unit_time_mills(epoch, dt):
 	return (dt - epoch).total_seconds() * 1000.0
 
+# get a time object from milliseconds
 def time_from_millis(millis):
     """Return UTC time that corresponds to milliseconds since Epoch."""
     return time.localtime(millis)
 
+# generate a key for a date
 def key_from_time(time):
-	return str(time.tm_yday) + "," + str(time.tm_year)
+	return str(time.tm_year) + "," + str(time.tm_mon) + "," + str(time.tm_yday) + "," + str(time.tm_wday)
 
 #Dates we are cleaning:
 #May 16, 2015 - September 8, 2015, summer break
@@ -88,22 +91,26 @@ def main():
 				else:
 					wifi_data[key] = defaultdict(list)
 		
-		# DO SOMETHING WITH WIFI DATA WHICH IS CLEANED AND BUCKETED INTO 15 MINUTE TIMESLOTS
+		# Clean information and write it to a csv
 		with open('../../../wifi_info_cleaned.csv', 'wb') as cf:
 			csv_writer = csv.writer(cf)
-			csv_writer.writerow(['year', 'day', 'hour', 'minute', 'num_people'])
+			csv_writer.writerow(['year', 'month', 'year_day', 'week_day', 'hour', 'minute', 'num_people'])
 			wifi_time_data = []
+			# iterate through all days
 			for date in wifi_data:
 				date_data = date.split(",")
 				day = wifi_data[date]
+				# check if the day has any timeslots
 				if day:
+					# iterate through each timeslote
 					for timeslot in day:
 						timeslot_data = timeslot.split(":")
 						num_people = len(day[timeslot])
-						time = [int(date_data[1]), int(date_data[0]), int(timeslot_data[0]), int(timeslot_data[1]), num_people]
+						time = [int(date_data[0]), int(date_data[1]), int(date_data[2]), int(date_data[3]), int(timeslot_data[0]), int(timeslot_data[1]), num_people]
 						wifi_time_data.append(time)
-
-			sorted_wifi_data = sorted(wifi_time_data, key=itemgetter(0,1,2,3))
+			# sort the information
+			sorted_wifi_data = sorted(wifi_time_data, key=itemgetter(0,1,2,4,5))
+			# write all of the information to a csv
 			for time in sorted_wifi_data:
 				csv_writer.writerow(time)
 	pass
