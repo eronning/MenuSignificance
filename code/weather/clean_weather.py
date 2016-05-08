@@ -6,13 +6,14 @@ def unit_time_mills(epoch, dt):
 	return (dt - epoch).total_seconds() * 1000.0
 
 def main():
+	data = {}
+	epoch = datetime.utcfromtimestamp(0)
 	with open('../../data/weather/PVD_cleaned.csv', 'wb') as f1:
 		csv_writer = csv.writer(f1)
 		csv_writer.writerow(['date', 'temperature', 'wind speed', 'rain', 'snow'])
 		with open('../../data/weather/PVD.csv', 'rb') as f:
 			csv_reader = csv.reader(f)
 			next(csv_reader, None)
-			epoch = datetime.utcfromtimestamp(0)
 			#Dates we are cleaning:
 			#May 16, 2015 - September 8, 2015, summer break
 			may_16_15 = unit_time_mills(epoch, datetime.strptime("12:00 AM May 16 2015", '%I:%M %p %B %d %Y'))
@@ -42,10 +43,24 @@ def main():
 				date_object = datetime.strptime(string, '%I:%M %p %B %d %Y')
 				date_mills = unit_time_mills(epoch, date_object)
 				# print date_object.hourd
-
+				information = row[1:]
+				# print information[0]
 				if not ((may_16_15 <= date_mills <= sept_8_15) or (nov_25_15 <= date_mills <= nov_29_15) or (dec_22_15 <= date_mills <= jan_26_16) or (mar_26_16 <= date_mills <= apr_3_16) or (0 <= date_object.hour <= 7) or (19 < date_object.hour <= 23) or (date_object.hour == 7 and date_object.minute > 30)):
-					csv_writer.writerow(row)
-
+					csv_writer.writerow([string , information[0], information[1], information[2], information[3]])
+					data[date_mills] = information
+	menu_data = {}
+	with open('../../data/menu/parsed_menu.csv', 'rb') as f2:
+		with open('../../data/weather/PVD_cleaned_2.csv', 'wb') as f3:
+			csv_writer = csv.writer(f3)
+			csv_writer.writerow(["date", "seafood", "temp", "windspeed", "rain", "snow"])
+			csv_reader = csv.reader(f2)
+			next(csv_reader, None)
+			for row in csv_reader:
+				date_time = datetime.strptime(row[0], '%I:%M %p %B %d %Y')
+				dateinmills = unit_time_mills(epoch, date_time)
+				key, value = min(data.items(), key=lambda (k, _): abs(k - dateinmills))
+				# print key, value
+				csv_writer.writerow([row[0], row[1], value[0], value[1], value[2], value[3]])
 
 if __name__ == '__main__':
 	main()
