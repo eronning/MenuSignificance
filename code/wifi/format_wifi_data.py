@@ -4,41 +4,12 @@ import csv
 import time
 from datetime import datetime, timedelta
 from collections import defaultdict
+from operator import itemgetter
 
-data_path = '../../../wifi_info.csv'
+data_path = '../../../wifi_info_cleaned.csv'
 
-
-epoch = datetime.utcfromtimestamp(0)
-
-def unit_time_mills(epoch, dt):
-	return (dt - epoch).total_seconds() * 1000.0
-
-def time_from_millis(millis):
-    """Return UTC time that corresponds to milliseconds since Epoch."""
-    return time.localtime(millis)
-
-def key_from_time(time):
-	return str(time.tm_yday) + "," + str(time.tm_year)
-
-#Dates we are cleaning:
-#May 16, 2015 - September 8, 2015, summer break
-may_16_15 = unit_time_mills(epoch, datetime.strptime("12:00 AM May 16 2015", '%I:%M %p %B %d %Y'))
-sept_8_15 = unit_time_mills(epoch, datetime.strptime("11:59 PM September 8 2015", '%I:%M %p %B %d %Y'))
-#November 25, 2015 - Novemeber 29, 2015, thanksgiving break
-nov_25_15 = unit_time_mills(epoch, datetime.strptime("12:00 AM November 25 2015", '%I:%M %p %B %d %Y'))
-nov_29_15 = unit_time_mills(epoch, datetime.strptime("11:59 PM November 29 2015", '%I:%M %p %B %d %Y'))
-#December 22, 2015 - January 26, 2016, winter break
-dec_22_15 = unit_time_mills(epoch, datetime.strptime("12:00 AM December 22 2015", '%I:%M %p %B %d %Y'))
-jan_26_16 = unit_time_mills(epoch, datetime.strptime("11:59 PM January 26 2016", '%I:%M %p %B %d %Y'))
-#March 26, 2016 - April 3, 2016, spring break
-mar_26_16 = unit_time_mills(epoch, datetime.strptime("12:00 AM March 26 2016", '%I:%M %p %B %d %Y'))
-apr_3_16 = unit_time_mills(epoch, datetime.strptime("11:59 PM April 3 2016", '%I:%M %p %B %d %Y'))
-
-
-
-def valid_time(date_mills, time_object):
-	return not ((may_16_15 <= date_mills <= sept_8_15) or (nov_25_15 <= date_mills <= nov_29_15) or (dec_22_15 <= date_mills <= jan_26_16) or (mar_26_16 <= date_mills <= apr_3_16) or (0 <= time_object.tm_hour <= 7) or (19 < time_object.tm_hour <= 23) or (time_object.tm_hour == 7 and time_object.tm_min > 30))
-
+def key_from_time(wifi_info):
+	return wifi_info["year"] + "," + wifi_info["month"] + "," + wifi_info["year_day"] + "," + wifi_info["week_day"]
  
 def main():
 	'''
@@ -50,27 +21,45 @@ def main():
 		wifi_data = {}
 
 		for row in reader:
-			connect = int(row[0])
-			connect_time_object = time_from_millis(connect)
-			if valid_time(connect, connect_time_object):
-				wifi_info = {
-				"connect": connect,
-				"disconnect": row[1],
-				"mac": row[2]
-				}
-				key = key_from_time(connect_time_object)
-				if key in wifi_data:
-					# perform logic here
-					date = wifi_data[key]
-					hr = connect_time_object.tm_hour
-					minute = connect_time_object.tm_min
-					minute_timeslot = minute - minute % 15
-					date[str(hr) + ":" + str(minute_timeslot)].append(wifi_info)
-				else:
-					wifi_data[key] = defaultdict(list)
-		
-		# DO SOMETHING WITH WIFI DATA WHICH IS CLEANED AND BUCKETED INTO 15 MINUTE TIMESLOTS
-		
+			wifi_info = {
+				"year"       : row[0],
+				"month"      : row[1],
+				"year_day"   : row[2],
+				"week_day"   : row[3],
+				"hour"       : row[4],
+				"minute"     : row[5],
+				"num_people" : row[6]
+			}
+			key = key_from_time(wifi_info)
+			if key in wifi_data:
+				# perform logic here
+				date = wifi_data[key]
+				hour = int(wifi_info["hour"])
+				minute = int(wifi_info["minute"])
+				minute_timeslot = minute - minute % 15
+				date[str(hour) + ":" + str(minute_timeslot)].append(wifi_info)
+			else:
+				wifi_data[key] = defaultdict(list)
+
+		with open('../../../wifi_info_timeslots.csv', 'wb') as cf:
+			csv_writer = csv.writer(cf)
+			csv_writer.writerow(['year', 'month', 'year_day', 'week_day', 'hour', 'minute', 'num_people'])
+			wifi_bucket_data = []
+			for date in wifi_data:
+				date_info = date.split(",")
+				day = wifi_data[date]
+				for timeslot in day:
+					timeslot_info = timeslot.split(":")
+					timeslot_data = day[timeslot]
+					avg_people = sum([int(data["num_people"]) for data in timeslot_data]) / len(timeslot_data)
+					bucket = [date_info[0], date_info[1], date_info[2], date_info[3], timeslot_info[0], timeslot_info[1], avg_people]
+					wifi_bucket_data.append(bucket)
+			# sort the information
+			sorted_wifi_bucket_data = sorted(wifi_bucket_data, key=itemgetter(0,1,2,4,5))
+			# write all of the information to a csv
+			for bucket in sorted_wifi_bucket_data:
+				csv_writer.writerow(bucket)
+
 	pass
 
 if __name__ == '__main__':
