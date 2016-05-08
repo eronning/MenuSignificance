@@ -2,7 +2,7 @@ var margin = {top: 40, right: 20, bottom: 30, left: 40},
     width = 1250 - margin.left - margin.right,
     height = 800 - margin.top - margin.bottom;
 
-d3.csv("data/course_times.csv", function(data) {
+d3.csv("data/course/course_data.csv", function(data) {
 
   var startMap = {};
   for (i in data) {
@@ -57,7 +57,7 @@ d3.csv("data/course_times.csv", function(data) {
     .scale(y)
     .orient("left");
 
-  var svg = d3.select("#visual").append("svg")
+  var svg = d3.select("#course_bar").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")

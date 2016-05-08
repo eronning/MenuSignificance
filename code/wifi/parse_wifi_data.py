@@ -70,7 +70,7 @@ def main():
 					wifi_data[key] = defaultdict(list)
 		
 		# DO SOMETHING WITH WIFI DATA WHICH IS CLEANED AND BUCKETED INTO 15 MINUTE TIMESLOTS
-		
+		print len(wifi_data.keys())		
 	pass
 
 if __name__ == '__main__':
