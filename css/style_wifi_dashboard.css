@@ -5,16 +5,60 @@ body {
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: steelblue;
   shape-rendering: crispEdges;
+}
+
+.axis text {
+	fill: steelblue;
 }
 
 .x.axis path {
   display: none;
 }
 
+
 .line {
   fill: none;
   stroke: steelblue;
   stroke-width: 1.5px;
 }
+
+#wifi_line {
+	background-color: black;
+	width: 100%;
+}
+
+.container {
+	width: auto;
+	margin-left: 5%;
+}
+
+.dropdown_container {
+	display: inline-block;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+#secondary_dropdown {
+	margin-left: 20%;
+}
+
+.dropdown {   
+    width: 200px;
+    height: 38px;
+    margin-left: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #111;
+    color: steelblue;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 10px 9px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+ }
