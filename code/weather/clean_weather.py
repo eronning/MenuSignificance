@@ -38,16 +38,18 @@ def main():
 				string.pop(2)
 				#rejoin string
 				string = ' '.join(string)
-				#create datetime object
-				# print string
 				date_object = datetime.strptime(string, '%I:%M %p %B %d %Y')
+				print date_object
 				date_mills = unit_time_mills(epoch, date_object)
-				# print date_object.hourd
 				information = row[1:]
 				# print information[0]
 				if not ((may_16_15 <= date_mills <= sept_8_15) or (nov_25_15 <= date_mills <= nov_29_15) or (dec_22_15 <= date_mills <= jan_26_16) or (mar_26_16 <= date_mills <= apr_3_16) or (0 <= date_object.hour <= 7) or (19 < date_object.hour <= 23) or (date_object.hour == 7 and date_object.minute > 30)):
 					csv_writer.writerow([string , information[0], information[1], information[2], information[3]])
 					data[date_mills] = information
+
+
+############################################
+#This is combining the menu and weather data
 	menu_data = {}
 	with open('../../data/menu/parsed_menu.csv', 'rb') as f2:
 		with open('../../data/weather/PVD_cleaned_2.csv', 'wb') as f3:
@@ -59,8 +61,10 @@ def main():
 				date_time = datetime.strptime(row[0], '%I:%M %p %B %d %Y')
 				dateinmills = unit_time_mills(epoch, date_time)
 				key, value = min(data.items(), key=lambda (k, _): abs(k - dateinmills))
-				# print key, value
-				csv_writer.writerow([row[0], row[1], value[0], value[1], value[2], value[3]])
+				if abs(key - dateinmills) > 3600000:
+					print "day too far"
+				else:	
+					csv_writer.writerow([row[0], row[1], value[0], value[1], value[2], value[3]])
 
 if __name__ == '__main__':
 	main()
