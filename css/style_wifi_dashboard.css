@@ -18,9 +18,15 @@ body {
 }
 
 
-.line {
+.wifi_line {
   fill: none;
-  stroke: steelblue;
+  stroke: DeepSkyBlue;
+  stroke-width: 1.5px;
+}
+
+.course_line {
+  fill: none;
+  stroke: yellow;
   stroke-width: 1.5px;
 }
 
@@ -34,18 +40,33 @@ body {
 	margin-left: 5%;
 }
 
+.inner_container {
+	display: inline-block;
+	width: 45%;
+}
+
+.left_inner_container {
+	width: 30%;
+}
+
+.right_inner_container {
+	display: inline-block;
+	margin-left: 2%;
+	width: 60%;
+}
+
 .dropdown_container {
 	display: inline-block;
-	margin-top: 25px;
+	margin-top: 0px;
 	margin-bottom: 25px;
 }
 
 #secondary_dropdown {
-	margin-left: 20%;
+	margin-left: 1%;
 }
 
 .dropdown {   
-    width: 200px;
+    width: 150px;
     height: 38px;
     margin-left: 5px;
     -webkit-appearance: none;
@@ -62,3 +83,32 @@ body {
     border-radius: 3px;
     cursor: pointer;
  }
+
+.checkbox {
+	display: inline-block;
+	margin-left: 1%;
+	margin-top: 25px;
+	width: 140px;
+	text-align: center;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #111;
+    color: steelblue;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 10px 9px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+	margin-left: 10px;
+}
+
+.checkbox label {
+	margin-left: 5%;
+}

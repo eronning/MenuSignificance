@@ -9,14 +9,13 @@ from collections import defaultdict
 api_key = "a5fe3ea6-fcdc-4cfa-b8de-092afcb7edd0"
 
 print "Fetching course data"
-departments = "CSCI"
 semesters = ["Fall%202015", "Spring%202016"]
 # initialise your csv file
 course_data = {}
 department_data = []
 with open('../../data/course/course_data.csv', 'wb') as outfile:
 	writer = csv.writer(outfile)
-	headers = ['crn','full_number','number','title','seats_available','seats_total','location','start','end'] # edit these as required
+	headers = ['semester','crn','full_number','number','title','seats_available','seats_total','location','day_of_week','start','end'] # edit these as required
 	writer.writerow(headers)
 	# url to pull all of the departments
 	url = ("https://api.students.brown.edu/academic/departments?client_id=%s" %
@@ -57,7 +56,7 @@ with open('../../data/course/course_data.csv', 'wb') as outfile:
 								# take the first meeting time (in case there are multiple)
 								meeting = meeting[0]
 								# get the row information
-								row = [item['crn'], item['full_number'], item['number'], item['title'], item['seats_available'], item['seats_total'], meeting['location'], meeting['start_time'], meeting['end_time']]
+								row = [semester, item['crn'], item['full_number'], item['number'], item['title'], item['seats_available'], item['seats_total'], meeting['location'], meeting['day_of_week'], meeting['start_time'], meeting['end_time']]
 								writer.writerow(row)
 								print "added course %s %s" % (item['number'], item['title'])
 							except Exception:
