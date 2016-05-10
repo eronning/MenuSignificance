@@ -39,6 +39,7 @@ def main():
 				#rejoin string
 				string = ' '.join(string)
 				date_object = datetime.strptime(string, '%I:%M %p %B %d %Y')
+				print date_object
 				date_mills = unit_time_mills(epoch, date_object)
 				information = row[1:]
 				# print information[0]
