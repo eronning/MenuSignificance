@@ -23,12 +23,13 @@ def main():
 	parsed_wifi_data = {}
 
 	with open('../../../wifi_data/wifi_info_timeslots.csv', 'rb') as f:
-		with open('../../../consolidated.csv', 'wb') as f2:
+		with open('../../../consolidated_binary.csv', 'wb') as f2:
 			csv_writer = csv.writer(f2)
-			csv_writer.writerow(["date", "seafood", "temp", "windspeed", "rain", "snow", "peaktime","traffic"])
+			csv_writer.writerow(["date", "seafood", "temp", "windspeed", "rain", "snow", "peaktime","heavy_traffic"])
 			csv_reader = csv.reader(f)
 			next(csv_reader, None)
 			peaktime = 0
+			heavy_traffic = 0
 			for row in csv_reader:
 				date_info = row[:-1]
 				# print date_info
@@ -43,9 +44,15 @@ def main():
 					peaktime = 1
 				else:
 					peaktime = 0
+
+				if int(row[len(row)-1]) >= 200:
+					heavy_traffic = 1
+				else:
+					heavy_traffic = 0
+
 				formatted_date = date_object.strftime("%I:%M %p %B %d %Y")
 				if date_object in part_combined:
-					csv_writer.writerow([formatted_date , part_combined[date_object][0], part_combined[date_object][1], part_combined[date_object][2], part_combined[date_object][3], part_combined[date_object][4], peaktime, row[len(row)-1]])
+					csv_writer.writerow([formatted_date , part_combined[date_object][0], part_combined[date_object][1], part_combined[date_object][2], part_combined[date_object][3], part_combined[date_object][4], peaktime, heavy_traffic])
 					
 				
 
