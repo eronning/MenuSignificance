@@ -4,7 +4,7 @@ import csv
 import random
 
 data = []
-with open('../../data/consolidated.csv', 'rb') as f:
+with open('../../../consolidated.csv', 'rb') as f:
 	csv_reader = csv.reader(f)
 	next(csv_reader, None)
 	counter = 0
@@ -14,6 +14,7 @@ with open('../../data/consolidated.csv', 'rb') as f:
 	rain = []
 	snow = []	
 	traffic = []
+	peak = []
 	for row in csv_reader:
 		counter += 1
 		data.append(row[1:])
@@ -22,35 +23,49 @@ with open('../../data/consolidated.csv', 'rb') as f:
 		windspeed.append(row[3])
 		rain.append(row[4])
 		snow.append(row[5])
-		traffic.append(row[6])
+		peak.append(row[6])
+		traffic.append(row[7])
 
 
-print len(data)
-random.shuffle(data)
-print len(data)
-training_data = data[:2498]
-testing_data = data[2498:]
+########################SK LEARN LINEAR REGRESSION############
+average_r2 = []
+for i in range(1000):
 
-X_train = [[float(d[i]) for i in range(0, 5)] for d in training_data]
-X_test = [[float(d[i]) for i in range(0, 5)] for d in testing_data]
+	random.shuffle(data)
+	# variables = [1, 4, 5]
+	training_data = data[:2498]
+	testing_data = data[2498:]
 
-Y_train = [float(d[5]) for d in training_data]
-Y_test = [float(d[5]) for d in testing_data]
+	X_train = [[float(d[i]) for i in range(0, 6)] for d in training_data]
+	X_test = [[float(d[i]) for i in range(0, 6)] for d in testing_data]
+
+	# X_train = [[float(d[i]) for i in variables] for d in training_data]
+	# X_test = [[float(d[i]) for i in variables] for d in testing_data]
+
+
+	Y_train = [float(d[6]) for d in training_data]
+	Y_test = [float(d[6]) for d in testing_data]
+
+	clf = linear_model.LinearRegression(copy_X=True, fit_intercept=True, normalize=False)
+	clf.fit(X_train, Y_train)
+	# print "Sklearn linear rgression:"
+	# print "B0 coeff:", clf.intercept_, "sefood_coeff:", clf.coef_[0], "temperature coeff:", clf.coef_[1], "windspeed coeff:", clf.coef_[2], "rain coeff:", clf.coef_[3], "snow coeff:", clf.coef_[4], "peak coeff:", clf.coef_[5]
+	# print "RSS:", np.mean((clf.predict(X_test) - Y_test) ** 2)
+	# print "Variance Score aka R^2:", clf.score(X_test, Y_test)
+	average_r2.append(clf.score(X_test, Y_test))
+
+print "average r2:", np.mean(average_r2)
+##############################################################
+
+####################NUMPY REGRESSION##########################
 # y = traffic
-# x = [seafood, temp, windspeed, rain, snow]
+# x = [seafood, temp, windspeed, rain, snow, peak]
 # X = np.column_stack(x+[[1]*len(x[0])])
 # regression = np.linalg.lstsq(X,y)
 # beta_hat = regression[0]
 # residuals = regression[1]
-# # print "coefficients:", beta_hat
+# print "coefficients:", beta_hat
 # print "Numpy linear regression:"
-# print "B0 coeff:", beta_hat[5], "sefood_coeff:", beta_hat[0], "temperature coeff:", beta_hat[1], "windspeed coeff:", beta_hat[2], "rain coeff:", beta_hat[3], "snow coeff:", beta_hat[4]
+# print "B0 coeff:", beta_hat[5], "sefood_coeff:", beta_hat[0], "temperature coeff:", beta_hat[1], "windspeed coeff:", beta_hat[2], "rain coeff:", beta_hat[3], "snow coeff:", beta_hat[4], "peak coeff:", beta_hat[5]
 # print "residuals:", residuals
-clf = linear_model.LinearRegression(copy_X=True, fit_intercept=True, normalize=False)
-
-
-clf.fit(X_train, Y_train)
-print "Sklearn linear rgression:"
-print "B0 coeff:", clf.intercept_, "sefood_coeff:", clf.coef_[0], "temperature coeff:", clf.coef_[1], "windspeed coeff:", clf.coef_[2], "rain coeff:", clf.coef_[3], "snow coeff:", clf.coef_[4]
-print "RSS:", np.mean((clf.predict(X_test) - Y_test) ** 2)
-print "Variance Score aka R^2:", clf.score(X_test, Y_test)
+##############################################################
