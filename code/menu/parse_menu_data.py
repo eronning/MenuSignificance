@@ -28,6 +28,7 @@ jan_26_16 = unit_time_mills(epoch, datetime.strptime("11:59 PM January 26 2016",
 mar_26_16 = unit_time_mills(epoch, datetime.strptime("12:00 AM March 26 2016", '%I:%M %p %B %d %Y'))
 apr_3_16 = unit_time_mills(epoch, datetime.strptime("11:59 PM April 3 2016", '%I:%M %p %B %d %Y'))
 
+dicti = {}
 seadict = {}
 counter = 0
 seafood = ['shrimp', 'hake', 'tilapia', 'haddock', 'scrod', 'flounder', 'fish', 'clams', 'salmon', 'sole', 'seafood', 'scallop']
@@ -55,6 +56,11 @@ with open(data_path) as in_file:
 				menus = day['menus']
 				for menu in menus:
 					time = 0
+					# if menu['bistro'][0] not in dicti:
+						# dicti[menu['bistro'][0]] = 1
+					# else:
+						# dicti[menu['bistro'][0]] += 1
+
 					#Breakfast is from [7:30am to 11:00AM)
 					if menu['meal'] == "breakfast":
 						time = breakfast_buckets
@@ -71,10 +77,21 @@ with open(data_path) as in_file:
 						items = menu['bistro'][0].split()
 						if not set(items).isdisjoint(seafood):
 							seadict[int(key)] = [1, string_helper]
+						# In case we wanted to categorize otherwise
+						# elif "beef" in items:
+							# seadict[int(key)] = [2, string_helper]
+						# elif "chicken" in items:
+							# seadict[int(key)] = [3, string_helper]
+						# elif "pork" in items:
+							# seadict[int(key)] = [4, string_helper]
 						else:
 							seadict[int(key)] = [0, string_helper]
 
+
 sorted_seadict = sorted(seadict.items(), key=operator.itemgetter(0))
+# sorted_dicti = sorted(dicti.items(), key=operator.itemgetter(0))
+# for k, v in sorted_dicti:
+	# print k.encode('utf-8'), v
 
 with open(output_path, 'wb') as f:
 	csv_writer = csv.writer(f)
