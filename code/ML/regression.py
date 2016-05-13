@@ -32,9 +32,17 @@ def main():
 
 
 
-	########################SK LEARN LINEAR REGRESSION############
+	########################SK LEARN REGRESSION############
 	average_test_score = []
 	average_train_score = []
+	intercept = []
+	seafood_coef = []
+	temperature_coef = []
+	windspeed_coef = []
+	rain_coef = []
+	snow_coef = []
+	peaktime_coef = []
+	
 	for i in range(1000):
 
 		random.shuffle(data)
@@ -49,11 +57,21 @@ def main():
 		Y_test = [float(d[6]) for d in testing_data]
 
 		clf.fit(X_train, Y_train)
+		# print clf.coef_
 		# print "B0 coeff:", clf.intercept_, "sefood_coeff:", clf.coef_[0], "temperature coeff:", clf.coef_[1], "windspeed coeff:", clf.coef_[2], "rain coeff:", clf.coef_[3], "snow coeff:", clf.coef_[4], "peak coeff:", clf.coef_[5]
 		# print "RSS:", np.mean((clf.predict(X_test) - Y_test) ** 2)
+		intercept.append(clf.intercept_)
+		seafood_coef.append(clf.coef_[0])
+		temperature_coef.append(clf.coef_[1])
+		windspeed_coef.append(clf.coef_[2])
+		rain_coef.append(clf.coef_[3])
+		snow_coef.append(clf.coef_[4])
+		peaktime_coef.append(clf.coef_[5])
 		average_train_score.append(clf.score(X_train, Y_train))
 		average_test_score.append(clf.score(X_test, Y_test))
 
+	print "Intercept Coef:", np.mean(intercept), "Seafood Coef:", np.mean(seafood_coef), "Temperature Coef:", np.mean(temperature_coef)
+	print "Windspeed Coef:", np.mean(windspeed_coef), "Rain Coef:", np.mean(rain_coef), "Snow Coef:", np.mean(snow_coef), "Peaktime Coef:", np.mean(peaktime_coef)
 	print "1000-Iteration-Average 80/20 Training Score(R^2 Value):", np.mean(average_train_score)
 	print "1000-Iteration-Average 80/20 Training STD:", np.std(average_train_score)
 	print "1000-Iteration-Average 80/20 Testing Score(R^2 Value):", np.mean(average_test_score)

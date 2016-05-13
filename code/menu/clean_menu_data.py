@@ -36,6 +36,7 @@ breakfast_buckets = ["7:30 AM ", "7:45 AM ", "8:00 AM ", "8:15 AM ", "8:30 AM ",
 lunch_buckets = ["11:00 AM ", "11:15 AM ", "11:30 AM ", "11:45 AM ", "12:00 PM ", "12:15 PM ", "12:30 PM ", "12:45 PM ", "1:00 PM ", "1:15 PM ", "1:30 PM ", "1:45 PM ", "2:00 PM ", "2:15 PM ", "2:30 PM ", "2:45 PM ", "3:00 PM ", 
 "3:15 PM ", "3:30 PM ", "3:45 PM "] 
 dinner_buckets = ["4:00 PM ", "4:15 PM ", "4:30 PM ", "4:45 PM ", "5:00 PM ", "5:15 PM ", "5:30 PM ", "5:45 PM ", "6:00 PM ", "6:15 PM ", "6:30 PM ", "6:45 PM ", "7:00 PM ", "7:15 PM ", "7:30 PM "]
+
 with open(data_path) as in_file:    
 	data = json.load(in_file)
 	#406 days
@@ -46,7 +47,7 @@ with open(data_path) as in_file:
 		random_time = '7:30 AM ' 
 		date_string = str(day['month']) + ' ' +str(day['day']) + ' ' + str(day['year'])
 		combined_string = random_time + date_string
-		# print date_string
+
 		date_object = datetime.strptime(combined_string, '%I:%M %p %m %d %Y')
 		date_mills = unit_time_mills(epoch, date_object)
 		if not ((may_16_15 <= date_mills <= sept_8_15) or (nov_25_15 <= date_mills <= nov_29_15) or (dec_22_15 <= date_mills <= jan_26_16) or (mar_26_16 <= date_mills <= apr_3_16)):
@@ -56,28 +57,24 @@ with open(data_path) as in_file:
 				menus = day['menus']
 				for menu in menus:
 					time = 0
-					# if menu['bistro'][0] not in dicti:
-						# dicti[menu['bistro'][0]] = 1
-					# else:
-						# dicti[menu['bistro'][0]] += 1
 
 					#Breakfast is from [7:30am to 11:00AM)
 					if menu['meal'] == "breakfast":
 						time = breakfast_buckets
-					#Lunch is from (11:00AM to 4:00PM]
+					#Lunch is from [11:00AM to 4:00PM)
 					elif menu['meal'] == "lunch":
 						time = lunch_buckets
-					#Dinner is from 4:00PM to 7:30PM
+					#Dinner is from [4:00PM to 7:30PM]
 					else:
 						time = dinner_buckets
-					# print int(day['day'])
+			
 					for i in time:
 						string_helper = i + str(calendar.month_name[int(day['month'])]) + ' ' + str(day['day']) + ' ' + str(day['year'])
 						key = unit_time_mills(epoch, datetime.strptime(string_helper, '%I:%M %p %B %d %Y'))
 						items = menu['bistro'][0].split()
 						if not set(items).isdisjoint(seafood):
 							seadict[int(key)] = [1, string_helper]
-						# In case we wanted to categorize otherwise
+						##########Categorize by meat?#########
 						# elif "beef" in items:
 							# seadict[int(key)] = [2, string_helper]
 						# elif "chicken" in items:
@@ -89,9 +86,7 @@ with open(data_path) as in_file:
 
 
 sorted_seadict = sorted(seadict.items(), key=operator.itemgetter(0))
-# sorted_dicti = sorted(dicti.items(), key=operator.itemgetter(0))
-# for k, v in sorted_dicti:
-	# print k.encode('utf-8'), v
+
 
 with open(output_path, 'wb') as f:
 	csv_writer = csv.writer(f)
