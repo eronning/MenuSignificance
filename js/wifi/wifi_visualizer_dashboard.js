@@ -1,21 +1,33 @@
+// define how time is formatted
 var formatTime = d3.time.format("%H:%M");
+
+// get a section of the date
 var bisectDate = d3.bisector(function(d) { return d.date; }).left;
 
+// variables indicating what data to use
 var _wifi_checked, _course_checked = false;
 
-var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-var display_options = ["Pick a specific day", "Pick a weekday"];
 
+// user display options
+var display_options = ["Pick a specific day", "Pick a weekday"];
+// defining the days of the week
+var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+// months of the year
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+// each months day count
 var days_of_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+// the years of information being displayed
 var years = ["2015", "2016"]
 
+// errors
 var _NO_WIFI_ERROR = "No wifi data for this day!";
 var _NO_DATA_ERROR = "No data has been selected for use!";
 
+// class of lines
 var _wifi_line_class = "wifi_line"
 var _course_line_class = "course_line"
 
+// read in both sets of data
 d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
   if (error) throw error;
   d3.csv("data/course/course_data_cleaned.csv", function(error, course_data) {
@@ -24,6 +36,7 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
     // group all of the wifi information
     var weekday_wifi_groupings = {};
     var yearday_wifi_groupings = {};
+    // iterate through all of the wifi data
     for (i in wifi_data) {
       var time = wifi_data[i];
       var week_group;
@@ -54,13 +67,15 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
     }
 
 
-    // group all of the wifi information
+    // group all of the course information -- only possible by weekday
     var weekday_course_groupings = {};
     var fall_data = [];
-    /*var yearday_course_groupings = {};*/
+    // iterate through all of the course information
     for (i in course_data) {
       var time = course_data[i];
       var week_group;
+      // display only one semester of data -- times are different per semester
+      // in the future have an option to pick the semester of course data to display
       if (time.semester === "Fall%202015") {
         fall_data.push(time);
         // group by weekday
@@ -74,53 +89,48 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
           weekday_course_groupings[time.week_day] = week_group;
         }
       }
-      /*var year_group;
-      var yearday_key = yeardayKey(time.year, time.year_day);
-      // group by day of the year
-      if (yearday_key in yearday_course_groupings) {
-        year_group = yearday_course_groupings[yearday_key];
-        year_group.push(time);
-        yearday_course_groupings[yearday_key] = year_group;
-      } else {
-        year_group = [];
-        year_group.push(time);
-        yearday_course_groupings[yearday_key] = year_group;
-      }*/
-
     }
 
-
+    // define the margins
     var margin = {top: 20, right: 20, bottom: 30, left: 50},
       width = 960 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
 
+    // define the x value
     var x = d3.time.scale()
         .domain([parseTime("7","30"), parseTime("19","30")])
         .range([0, width]);
 
-    /*console.log(d3.max(course_data, function(d) { return +d.num_people; }))*/
-    // JUST SET A LARGE SCALING VALUE
+    // define a y value
     var y = d3.scale.linear()
         .domain([0, d3.max(fall_data, function(d) { return +d.num_people; })])
         .range([height, 0]);
 
+    // declare the x-axis
     var xAxis = d3.svg.axis()
         .scale(x)
         .ticks(11)
         .tickFormat(formatTime)
         .orient("bottom");
 
+    // declare the y-axis
     var yAxis = d3.svg.axis()
         .scale(y)
         .orient("left");
 
+    // define a line
     var line = d3.svg.line()
         .x(function(d) { return x(parseTime(d.hour, d.minute)); })
         .y(function(d) { return y(d.num_people); });
 
-
+    /* drawGraph draws the graph
+     * @param data is the data to draw on the graph
+     * @param lineClass is the class of lines to be drawn
+     * return the svg drawn 
+     */
     function drawGraph(data, lineClass) {
       
+      // create the svg
       var svg = d3.select("#wifi_line").append("svg")
         .attr("id", "wifi_svg")
         .attr("width", width + margin.left + margin.right)
@@ -128,6 +138,7 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+      // generate the x-axis
       svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
@@ -140,6 +151,7 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
         .style("fill", "steelblue")
         .text("Time of the day");
 
+      // generate the y-axis
       svg.append("g")
         .attr("class", "y axis")
         .call(yAxis)
@@ -151,14 +163,21 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
         .style("fill", "steelblue")
         .text("Number of people");
 
+      // draw all of the paths
       svg.append("path")
         .datum(data)
         .attr("class", lineClass)
         .attr("d", line);
 
+      // return the created svg
       return svg;
     }
 
+    /* drawGraph draws the graph
+     * @param data is the data to draw on the graph
+     * @param lineClass is the class of lines to be drawn
+     * return none 
+     */
     function drawLines(svg, data, lineClass) {
       svg.append("path")
         .datum(data)
@@ -166,7 +185,13 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
         .attr("d", line);
     }
 
+    /* drawError draws an error on the svg
+     * @param error is the error to draw
+     * return none 
+     */
     function drawError(error) {
+
+      // create the svg
       var svg = d3.select("#wifi_line").append("svg")
         .attr("id", "wifi_svg")
         .attr("width", width + margin.left + margin.right)
@@ -174,6 +199,7 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+      // generate the x-axis
       svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
@@ -186,6 +212,7 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
         .style("fill", "steelblue")
         .text("Time of the day");
 
+      // generate the y-axis
       svg.append("g")
         .attr("class", "y axis")
         .call(yAxis)
@@ -197,6 +224,7 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
         .style("fill", "steelblue")
         .text("Number of people");
 
+      // add the error text to the svg
       svg.append("text")
         .attr("x", width / 2)
         .attr("y", height / 4)
@@ -204,7 +232,14 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
         .text(error);
     }
 
+    /* handleDraw handles the different types of data to be drawn
+     * @param key is the key to grab the data
+     * @param isWeekday is a boolean indicating whether or not the data
+     *                  is a weekday or not
+     * return none 
+     */
     function handleDraw(key, isWeekday) {
+      // remove the current svg
       d3.select("#wifi_svg").remove();
       // user wants wifi information to be used
       var wifi_svg;
@@ -245,27 +280,41 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
       }
     }
 
-    // Create the select box for choosing options 
+    /* drawDropdown draws the dropdowns for users
+     * @param id is the id to append the dropdown to
+     * @param appendId is id for the dropdown
+     * @param data is the data to put in the dropdown
+     * @param onchange is the onchange function for the dropdown
+     * return none 
+     */
     function drawDropdown(id, appendId, data, onchange) {
       
+      // generate the select
       var select = d3.select(id)
         .append('select')
         .attr('id', appendId)
         .attr('class','dropdown')
         .on('change', onchange);
 
+      // create the options elements
       var options = select
         .selectAll('option')
         .data(data).enter()
         .append('option')
         .text(function (d) { return d; });
     }
-    // on change function for weekdays
+
+    /* weekday_onchange defines the onchange function for a weekday
+     * return none 
+     */
     function weekday_onchange() {
       selectValue = d3.select('#secondary_id_weekday').property('value');
       handleDraw(days.indexOf(selectValue), true);
     };
 
+    /* getYearDay index gets the key for a year day from values entered
+     * return none 
+     */
     function getYeardayIndex() {
       // get the user input values
       selectValue = d3.select('#secondary_id_yearday').property('value');
@@ -285,6 +334,9 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
       handleDraw(yearday_key, false);
     }
 
+    /* month_onchange is the onchange function for month dropdown
+     * return none 
+     */
     function month_onchange() {
       selectValue = d3.select('#secondary_id_month').property('value');
       var month = months.indexOf(selectValue);
@@ -296,14 +348,23 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
       getYeardayIndex();
     }
 
+    /* yearday_onchange is the onchange function for the yearday dropdown
+     * return none 
+     */
     function yearday_onchange() {
       getYeardayIndex();
     }
 
+    /* year_onchange is the onchange function for the year dropdown
+     * return none 
+     */
     function year_onchange() {
       getYeardayIndex();
     }
 
+    /* display_onchange is the onchange function for the display options dropdown
+     * return none 
+     */
     function display_onchange() {
       selectValue = d3.select('#primary_id').property('value')
       switch (display_options.indexOf(selectValue)) {
@@ -324,7 +385,9 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
       }
     };
 
-    // check the status of the check boxes
+    /* checkbox_onchange is the onchange function for the checkboxes (for data choice)
+     * return none 
+     */
     function checkbox_onchange() {
       var wifi_element = d3.select("#wifi_checkbox")[0][0];
       var wifi_child = wifi_element.childNodes[0].childNodes[1];
@@ -334,6 +397,11 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
       _course_checked = course_child.checked;
     }
 
+    /* draw_checkbox draws a checkbox
+     * @param id is the id of the checkbox
+     * @param text is the text to be draw next to the checkbox
+     * return none 
+     */
     function draw_checkbox(id, text) {
       d3.select(id)
         .attr('class', 'checkbox')
@@ -359,7 +427,11 @@ d3.csv("data/wifi/wifi_info_cleaned.csv", function(error, wifi_data) {
   });
 });
 
-// parses time
+/* parseTime parses the time given a hour and minute
+ * @param h is the hour
+ * @param m is the minute
+ * return the combined time 
+ */
 function parseTime(h, m) {
   var s = h + ":" + m;
   var t = formatTime.parse(s);
@@ -367,6 +439,10 @@ function parseTime(h, m) {
   return t;
 }
 
+/* fillDayArray fills a array containing each day value for the number of days
+ * @param num_days is the number of days to fill the array with
+ * return the array containing the days
+ */
 function fillDayArray(num_days) {
   var day_count = [];
   for (var i = 1; i <= num_days; i++) {
@@ -375,6 +451,11 @@ function fillDayArray(num_days) {
   return day_count;
 }
 
+/* yeardayKey gets a key for a yearday and year
+ * @param year is the year 
+ * @param yearday is the day of the year
+ * return the key for the information passed in
+ */
 function yeardayKey(year, yearday) {
     return year + ',' + yearday;
 }
