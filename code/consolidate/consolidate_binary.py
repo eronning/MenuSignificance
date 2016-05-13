@@ -1,6 +1,10 @@
 import csv
 from datetime import datetime
 
+# author: blnguyen
+# description: integrates all the data so that it could be used 
+#			   for machine learning, does this for the classifiers
+
 epoch = datetime.utcfromtimestamp(0)
 
 def unit_time_mills(dt):
@@ -59,6 +63,7 @@ def main():
 				else:
 					peaktime = 0
 
+				#This is the only difference, it puts a binary variable for our dependent variable
 				if int(row[len(row)-1]) >= 200:
 					heavy_traffic = 1
 				else:

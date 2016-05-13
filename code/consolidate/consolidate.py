@@ -1,11 +1,18 @@
 import csv
 from datetime import datetime
 
+# author: blnguyen
+# description: integrates all the data so that it could be used 
+#			   for machine learning, does this for regressions
+
+
 epoch = datetime.utcfromtimestamp(0)
 
 def unit_time_mills(dt):
 	return (dt - epoch).total_seconds() * 1000.0
 
+#Peaktime is a variable checking to see when the Ratty is expect to be full. This incoporates lunch and dinner
+#At times 12-1pm and 6:30-7:30pm
 def peaktime_check(date_object):
 	if ((date_object.time().hour >= 12 and date_object.time().hour < 13) or (date_object.time().hour == 13 and date_object.time().minute == 0 )) or ((date_object.time().hour >= 18 and date_object.time().minute >= 30 and date_object.time().hour < 19) or (date_object.time().hour == 19 and date_object.time().minute <= 30)):
 		return True
@@ -14,6 +21,7 @@ def peaktime_check(date_object):
 
 def main():
 	###############COMBINE WEATHER AND MENU DATA################
+	#Start by opening the weather data and parsing it into a dictionary
 	weather_data = {}
 	with open('../../data/weather/Weather_Data_cleaned.csv', 'rb') as f:
 		csv_reader = csv.reader(f)
@@ -23,7 +31,7 @@ def main():
 			date_object = datetime.strptime(date_string, '%I:%M %p %B %d %Y')
 			date_mills = unit_time_mills(date_object)
 			weather_data[date_mills] = row[1:]
-
+	#Open the menu data and prepare to combine the two into one dictionary
 	weather_menu_data = {}
 	with open('../../data/menu/menu_data_cleaned.csv', 'rb') as f:
 		csv_reader = csv.reader(f)
@@ -53,13 +61,16 @@ def main():
 				doy = date_info[2]
 				date_string = hour + ' ' + minute + ' ' + doy + ' ' + year
 				date_object = datetime.strptime(date_string, '%H %M %j %Y')
-
+				
+				#Check to see if it is a peak time and set the variable accordingly
 				if (peaktime_check(date_object)):
 					peaktime = 1
 				else:
 					peaktime = 0
 
 				formatted_date = date_object.strftime("%I:%M %p %B %d %Y")
+				#Only if the wifi data point has relevant data do we include it into the 
+				#integrated dataset
 				if date_object in weather_menu_data:
 					csv_writer.writerow([formatted_date , weather_menu_data[date_object][0], weather_menu_data[date_object][1], weather_menu_data[date_object][2], weather_menu_data[date_object][3], weather_menu_data[date_object][4], peaktime, row[len(row)-1]])
 					

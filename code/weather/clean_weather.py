@@ -1,5 +1,7 @@
 import csv
 from datetime import datetime
+# author: blnguyen
+# description: cleans the weather data and prepares it for integration
 
 #Support functions to turn a date into milliseconds since epoch
 epoch = datetime.utcfromtimestamp(0)

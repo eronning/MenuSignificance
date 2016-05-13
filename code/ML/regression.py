@@ -3,6 +3,8 @@ import argparse
 import numpy as np
 import csv
 import random
+# author: blnguyen
+# description: python file for all the regressions being ran.
 
 regression_data_path = '../../../consolidated.csv'
 
@@ -11,7 +13,8 @@ def main():
 	parser.add_argument('-c', '--classifier', required = True, help=' linear | lasso | ridge ')
 	parser.add_argument('-a', '--alpha', default = 10, help='enter penalization value')
 	opts = parser.parse_args()
-
+	
+	#Create classifier depending on what is passed in!
 	clf = None
 	if opts.classifier == 'linear':
 		clf = linear_model.LinearRegression(copy_X=True, fit_intercept=True, normalize=False)
@@ -65,6 +68,7 @@ def main():
 		average_train_score.append(clf.score(X_train, Y_train))
 		average_test_score.append(clf.score(X_test, Y_test))
 
+	#Print out averages for the 1000 iterations
 	print "1000-Iteration-Average: Intercept Coef:", np.mean(intercept), "Seafood Coef:", np.mean(seafood_coef), "Temperature Coef:", np.mean(temperature_coef), "Windspeed Coef:", np.mean(windspeed_coef), "Rain Coef:", np.mean(rain_coef), "Snow Coef:", np.mean(snow_coef), "Peaktime Coef:", np.mean(peaktime_coef)
 	print "1000-Iteration-Average 80/20 Training Score(R^2 Value):", np.mean(average_train_score)
 	print "1000-Iteration-Average 80/20 Training STD:", np.std(average_train_score)

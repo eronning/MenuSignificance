@@ -5,6 +5,9 @@ import urllib2
 import calendar
 import operator
 import csv
+# author: blnguyen
+# description: cleans the menu data from the menu_data.json and 
+#			   also formats it correctly so that it could later be integrated
 
 data_path = '../../data/menu/menu_data.json'
 output_path = '../../data/menu/menu_data_cleaned.csv'
@@ -28,10 +31,11 @@ jan_26_16 = unit_time_mills(epoch, datetime.strptime("11:59 PM January 26 2016",
 mar_26_16 = unit_time_mills(epoch, datetime.strptime("12:00 AM March 26 2016", '%I:%M %p %B %d %Y'))
 apr_3_16 = unit_time_mills(epoch, datetime.strptime("11:59 PM April 3 2016", '%I:%M %p %B %d %Y'))
 
-dicti = {}
 seadict = {}
-counter = 0
+
+#Key words for seafood!
 seafood = ['shrimp', 'hake', 'tilapia', 'haddock', 'scrod', 'flounder', 'fish', 'clams', 'salmon', 'sole', 'seafood', 'scallop']
+#These buckets are to help write and format the data
 breakfast_buckets = ["7:30 AM ", "7:45 AM ", "8:00 AM ", "8:15 AM ", "8:30 AM ", "8:45 AM ", "9:00 AM ", "9:15 AM ", "9:30 AM ", "9:45 AM ", "10:00 AM ", "10:15 AM ", "10:30 AM ", "10:45 AM "]
 lunch_buckets = ["11:00 AM ", "11:15 AM ", "11:30 AM ", "11:45 AM ", "12:00 PM ", "12:15 PM ", "12:30 PM ", "12:45 PM ", "1:00 PM ", "1:15 PM ", "1:30 PM ", "1:45 PM ", "2:00 PM ", "2:15 PM ", "2:30 PM ", "2:45 PM ", "3:00 PM ", 
 "3:15 PM ", "3:30 PM ", "3:45 PM "] 
@@ -71,7 +75,9 @@ with open(data_path) as in_file:
 					for i in time:
 						string_helper = i + str(calendar.month_name[int(day['month'])]) + ' ' + str(day['day']) + ' ' + str(day['year'])
 						key = unit_time_mills(epoch, datetime.strptime(string_helper, '%I:%M %p %B %d %Y'))
+						#Get the very first item in the bistor line and split it 
 						items = menu['bistro'][0].split()
+						#Check to see if anything in items has anything in seafood keywords
 						if not set(items).isdisjoint(seafood):
 							seadict[int(key)] = [1, string_helper]
 						##########Categorize by meat?#########
@@ -84,10 +90,11 @@ with open(data_path) as in_file:
 						else:
 							seadict[int(key)] = [0, string_helper]
 
-
+#Sort the dictionary so it is sorted by dates in milliseconds since I'm not sure
+#if we can sort by datetimes
 sorted_seadict = sorted(seadict.items(), key=operator.itemgetter(0))
 
-
+#Loop through the sorted dictionary and write out the cleanly formatted data
 with open(output_path, 'wb') as f:
 	csv_writer = csv.writer(f)
 	csv_writer.writerow(['Date', 'Seafood'])
