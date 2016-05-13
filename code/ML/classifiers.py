@@ -24,7 +24,7 @@ def main():
 	elif opts.classifier == 'svm':
 		clf = SVC()
 	elif opts.classifier == 'nb':
-		clf= BernoulliNB(binarize=None)
+		clf= BernoulliNB()
 	else:
 		raise Exception('Unrecognized classifier!')
 

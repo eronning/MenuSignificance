@@ -7,7 +7,7 @@ import operator
 import csv
 
 data_path = '../../data/menu/menu_data.json'
-output_path = '../../data/menu/parsed_menu.csv'
+output_path = '../../data/menu/menu_data_cleaned.csv'
 
 def unit_time_mills(epoch, dt):
 	return (dt - epoch).total_seconds() * 1000.0

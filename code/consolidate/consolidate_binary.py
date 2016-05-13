@@ -15,7 +15,7 @@ def peaktime_check(date_object):
 def main():
 	###############COMBINE WEATHER AND MENU DATA################
 	weather_data = {}
-	with open('../../data/weather/PVD_cleaned.csv', 'rb') as f:
+	with open('../../data/weather/Weather_Data_cleaned.csv', 'rb') as f:
 		csv_reader = csv.reader(f)
 		next(csv_reader, None)
 		for row in csv_reader:
@@ -25,7 +25,7 @@ def main():
 			weather_data[date_mills] = row[1:]
 
 	weather_menu_data = {}
-	with open('../../data/menu/parsed_menu.csv', 'rb') as f:
+	with open('../../data/menu/menu_data_cleaned.csv', 'rb') as f:
 		csv_reader = csv.reader(f)
 		next(csv_reader, None)
 		for row in csv_reader:
@@ -39,7 +39,7 @@ def main():
 
 	##########ADD IN TWO MORE VARIABLES, PEAKTIME, AND TRAFFIC########
 	with open('../../../wifi_data/wifi_info_timeslots.csv', 'rb') as f:
-		with open('../../../consolidated.csv', 'wb') as f2:
+		with open('../../../consolidated_binary.csv', 'wb') as f2:
 			csv_writer = csv.writer(f2)
 			csv_writer.writerow(["date", "food_category", "temperature", "windspeed", "rain", "snow", "peaktime", "heavytraffic"])
 			csv_reader = csv.reader(f)

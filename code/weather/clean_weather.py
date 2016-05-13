@@ -28,10 +28,10 @@ def clean_dates(date_mills, date_object):
 		
 def main():
 	data = {}
-	with open('../../data/weather/PVD_cleaned.csv', 'wb') as f1:
+	with open('../../data/weather/Weather_Data_cleaned.csv', 'wb') as f1:
 		csv_writer = csv.writer(f1)
 		csv_writer.writerow(['date', 'temperature', 'wind speed', 'rain', 'snow'])
-		with open('../../data/weather/PVD.csv', 'rb') as f:
+		with open('../../data/weather/Weather_Data.csv', 'rb') as f:
 			csv_reader = csv.reader(f)
 			next(csv_reader, None)
 
