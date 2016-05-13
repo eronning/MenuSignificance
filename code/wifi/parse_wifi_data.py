@@ -6,25 +6,39 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 from operator import itemgetter
 
+# description: parses wifi information from csv of data provided by Brown
+#              CIS. each set of connect and disconnects is given a data point
+#              for each minute from connect to disconnect. this data is then
+#              placed in a sorted format and written to a csv file 
+#              (wifi_info_cleaned.csv). -- file not included for privacy reasons
+
+# path to csv file of all wifi information
 data_path = '../../../wifi_info.csv'
-
-
+# epoch time
 epoch = datetime.utcfromtimestamp(0)
 
-# get time in millis
+# unut_time_millis gets time in a millisecond format
+# @param epoch is the epoch time
+# @param dt is the date time of the time to calculate
+# return the date provided in the date time object in
+#        a millisecond time format
 def unit_time_mills(epoch, dt):
 	return (dt - epoch).total_seconds() * 1000.0
 
-# get a time object from milliseconds
+# time_from_millis gets a time object from millisecond format
+# @param millis is the milliseconds since epoch
+# return a time object corresponding to the milliseconds passed in
 def time_from_millis(millis):
     """Return UTC time that corresponds to milliseconds since Epoch."""
     return time.localtime(millis)
 
-# generate a key for a date
+# key_from_time gets a key from a time object
+# @param time is a time object
+# return a string which is a key for the time object
 def key_from_time(time):
 	return str(time.tm_year) + "," + str(time.tm_mon) + "," + str(time.tm_yday) + "," + str(time.tm_wday)
 
-#Dates we are cleaning:
+# Dates being cleaned out:
 #May 16, 2015 - September 8, 2015, summer break
 may_16_15 = unit_time_mills(epoch, datetime.strptime("12:00 AM May 16 2015", '%I:%M %p %B %d %Y'))
 sept_8_15 = unit_time_mills(epoch, datetime.strptime("11:59 PM September 8 2015", '%I:%M %p %B %d %Y'))
@@ -39,7 +53,11 @@ mar_26_16 = unit_time_mills(epoch, datetime.strptime("12:00 AM March 26 2016", '
 apr_3_16 = unit_time_mills(epoch, datetime.strptime("11:59 PM April 3 2016", '%I:%M %p %B %d %Y'))
 
 
-
+# valid_time checks that the time passed in is valid
+#            removing dates in timeframe listed above
+# @param date_millis is the date in a millisecond format
+# @param time_oject is the date in a time object format
+# return a boolean on whether or not the time passed in is valid
 def valid_time(date_mills, time_object):
 	return not ((may_16_15 <= date_mills <= sept_8_15) or (nov_25_15 <= date_mills <= nov_29_15) or (dec_22_15 <= date_mills <= jan_26_16) or (mar_26_16 <= date_mills <= apr_3_16) or (0 <= time_object.tm_hour <= 7) or (19 < time_object.tm_hour <= 23) or (time_object.tm_hour == 7 and time_object.tm_min > 30))
 
@@ -52,7 +70,7 @@ def main():
 		reader = csv.reader(f)
 		header = next(reader)
 		wifi_data = {}
-
+		# iterate through each row in the csv file
 		for row in reader:
 			connect = int(row[0])
 			disconnect = int(row[1])

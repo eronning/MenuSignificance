@@ -6,9 +6,23 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 from operator import itemgetter
 
+# author: eronning
+# description: parses course information pulled from Brown API
+#              and gives each course a data point for each
+#              minute that it is in session and bucketed based on
+#              the day of the week that it is offered. this data is then
+#              cleaned of invalid times (times when the ratty is not open), 
+#              sorted and written to a csv file (course_data_cleaned.csv).
+
 data_path = '../../data/course/course_data.csv'
 
-def getTimeObject(time, day_of_week, semester):
+# get_time_object gets a time object
+# @param time is the seconds since midnight
+# @param day_of_week is the day of the week
+# @param semester is the semester and year
+# return a time object containing time of day,
+#        day of the week and the semester
+def get_time_object(time, day_of_week, semester):
 	hours = time / 3600;
 	minutes = (time % 3600) / 60;
 	time_object = {
@@ -19,9 +33,13 @@ def getTimeObject(time, day_of_week, semester):
 	}
 	return time_object
 
+# key_from_time gets a key from a time object
+# @param time_object is a object containing time information
+# return a key for that time object
 def key_from_time(time_object):
 	return str(time_object["semester"]) + ',' + str(days[time_object["day_of_week"]]) + ',' + str(time_object["hour"]) + ',' + str(time_object["minute"])
 
+# mapping days to their day of the week (index format)
 days = {"M": 0, "T": 1, "W": 2, "R": 3, "F": 4}
 
 def main():
@@ -35,14 +53,16 @@ def main():
 		starting_grouping = defaultdict(list)
 		ending_grouping = defaultdict(list)
 		for row in reader:
+			# grab information at each row
 			semester = row[0]
 			size = int(row[6]) - int(row[5])
 			day_of_week = row[8]
 			start_time = int(row[9])
 			end_time = int(row[10])
 			# get time objects
-			start_time_object = getTimeObject(start_time, day_of_week, semester)
-			end_time_object = getTimeObject(end_time, day_of_week, semester)
+			start_time_object = get_time_object(start_time, day_of_week, semester)
+			end_time_object = get_time_object(end_time, day_of_week, semester)
+			# fill a object with information of that course
 			course_info = {
 				'semester'	  : semester,
 				'course'      : row[3],
