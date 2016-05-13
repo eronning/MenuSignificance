@@ -1,7 +1,9 @@
 import csv
 from datetime import datetime
 
-def unit_time_mills(epoch, dt):
+epoch = datetime.utcfromtimestamp(0)
+
+def unit_time_mills(dt):
 	return (dt - epoch).total_seconds() * 1000.0
 
 def peaktime_check(date_object):
@@ -11,35 +13,47 @@ def peaktime_check(date_object):
 		return False
 
 def main():
-	part_combined = {}
-	with open('../../data/weather/PVD_cleaned_2.csv', 'rb') as f:
+	###############COMBINE WEATHER AND MENU DATA################
+	weather_data = {}
+	with open('../../data/weather/PVD_cleaned.csv', 'rb') as f:
 		csv_reader = csv.reader(f)
 		next(csv_reader, None)
 		for row in csv_reader:
 			date_string = row[0]
 			date_object = datetime.strptime(date_string, '%I:%M %p %B %d %Y')
-			part_combined[date_object] = row[1:]
-	# print part_combined	
-	parsed_wifi_data = {}
+			date_mills = unit_time_mills(date_object)
+			weather_data[date_mills] = row[1:]
 
+	weather_menu_data = {}
+	with open('../../data/menu/parsed_menu.csv', 'rb') as f:
+		csv_reader = csv.reader(f)
+		next(csv_reader, None)
+		for row in csv_reader:
+			date_object = datetime.strptime(row[0], '%I:%M %p %B %d %Y')
+			date_mills = unit_time_mills(date_object)
+			#Find the nearest weather data
+			key, value = min(weather_data.items(), key=lambda (k, _): abs(k - date_mills))
+			#If we can't find weather data within an hour of our data point, we won't include it anymore
+			if abs(key - date_mills) < 3600000:	
+				weather_menu_data[date_object] = [row[1]] + value	
+
+	##########ADD IN TWO MORE VARIABLES, PEAKTIME, AND TRAFFIC########
 	with open('../../../wifi_data/wifi_info_timeslots.csv', 'rb') as f:
-		with open('../../../consolidated_binary.csv', 'wb') as f2:
+		with open('../../../consolidated.csv', 'wb') as f2:
 			csv_writer = csv.writer(f2)
-			csv_writer.writerow(["date", "seafood", "temp", "windspeed", "rain", "snow", "peaktime","heavy_traffic"])
+			csv_writer.writerow(["date", "food_category", "temperature", "windspeed", "rain", "snow", "peaktime", "heavytraffic"])
 			csv_reader = csv.reader(f)
 			next(csv_reader, None)
 			peaktime = 0
-			heavy_traffic = 0
 			for row in csv_reader:
 				date_info = row[:-1]
-				# print date_info
 				minute = date_info[5]
 				hour = date_info[4]
 				year = date_info[0]
 				doy = date_info[2]
 				date_string = hour + ' ' + minute + ' ' + doy + ' ' + year
 				date_object = datetime.strptime(date_string, '%H %M %j %Y')
-				# print date_object.time().hour
+
 				if (peaktime_check(date_object)):
 					peaktime = 1
 				else:
@@ -51,8 +65,8 @@ def main():
 					heavy_traffic = 0
 
 				formatted_date = date_object.strftime("%I:%M %p %B %d %Y")
-				if date_object in part_combined:
-					csv_writer.writerow([formatted_date , part_combined[date_object][0], part_combined[date_object][1], part_combined[date_object][2], part_combined[date_object][3], part_combined[date_object][4], peaktime, heavy_traffic])
+				if date_object in weather_menu_data:
+					csv_writer.writerow([formatted_date , weather_menu_data[date_object][0], weather_menu_data[date_object][1], weather_menu_data[date_object][2], weather_menu_data[date_object][3], weather_menu_data[date_object][4], peaktime, heavy_traffic])
 					
 				
 
