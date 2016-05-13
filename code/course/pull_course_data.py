@@ -5,7 +5,12 @@ import json
 import urllib2
 from collections import defaultdict
  
+# author: eronning
+# description: pulls course information from Brown API for several
+#              semesters and grabs important information which is
+#              written to a csv (course_data.csv) in a sorted format.
 
+# key for the brown api
 api_key = "a5fe3ea6-fcdc-4cfa-b8de-092afcb7edd0"
 
 print "Fetching course data"

@@ -3,8 +3,17 @@ import datetime
 import os
  
 import requests # this library makes html requests much simpler
- 
- 
+
+# NOTE:
+# this file was pulled from the internet as an example about
+# getting information from the wunderground api and was modified
+# for the purpose of getting weather information about providence
+
+# author: unknown
+# modifier: eronning
+# description: pulls weather information from the Wunderground API
+#              and writes important information to a csv (PVD.csv)
+
 # add your API key (from wunderground) here
 api_key = "29fff3c6ccbbc531"
 station_ids = ["PVD", ] # add more stations here if required
@@ -36,7 +45,6 @@ for station_id in station_ids:
 				# build your row
 				for history in data['history']['observations']:
 					row = []
-					# print history
 					row.append(str(history['date']['pretty']))
 					row.append(str(history['tempm']))
 					row.append(str(history['wspdm']))  
