@@ -1,0 +1,2 @@
+All data is in the data folder except for the wifi data. This is omitted due to privacy reasons (signed a confidentiality agreement).
+If running any files using this data is required, please email us!
