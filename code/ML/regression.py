@@ -22,6 +22,7 @@ def main():
 	else:
 		raise Exception('Unrecognized classifier!')
 
+	####################PARSE THE DATA#####################
 	data = []
 	with open(regression_data_path, 'rb') as f:
 		csv_reader = csv.reader(f)
@@ -29,10 +30,7 @@ def main():
 		for row in csv_reader:
 			data.append(row[1:])
 
-
-
-
-	########################SK LEARN REGRESSION############
+	##########80-20 TRAIN-TEST SPLIT REGRESSION############
 	average_test_score = []
 	average_train_score = []
 	intercept = []
@@ -57,9 +55,6 @@ def main():
 		Y_test = [float(d[6]) for d in testing_data]
 
 		clf.fit(X_train, Y_train)
-		# print clf.coef_
-		# print "B0 coeff:", clf.intercept_, "sefood_coeff:", clf.coef_[0], "temperature coeff:", clf.coef_[1], "windspeed coeff:", clf.coef_[2], "rain coeff:", clf.coef_[3], "snow coeff:", clf.coef_[4], "peak coeff:", clf.coef_[5]
-		# print "RSS:", np.mean((clf.predict(X_test) - Y_test) ** 2)
 		intercept.append(clf.intercept_)
 		seafood_coef.append(clf.coef_[0])
 		temperature_coef.append(clf.coef_[1])
@@ -70,8 +65,7 @@ def main():
 		average_train_score.append(clf.score(X_train, Y_train))
 		average_test_score.append(clf.score(X_test, Y_test))
 
-	print "Intercept Coef:", np.mean(intercept), "Seafood Coef:", np.mean(seafood_coef), "Temperature Coef:", np.mean(temperature_coef)
-	print "Windspeed Coef:", np.mean(windspeed_coef), "Rain Coef:", np.mean(rain_coef), "Snow Coef:", np.mean(snow_coef), "Peaktime Coef:", np.mean(peaktime_coef)
+	print "1000-Iteration-Average: Intercept Coef:", np.mean(intercept), "Seafood Coef:", np.mean(seafood_coef), "Temperature Coef:", np.mean(temperature_coef), "Windspeed Coef:", np.mean(windspeed_coef), "Rain Coef:", np.mean(rain_coef), "Snow Coef:", np.mean(snow_coef), "Peaktime Coef:", np.mean(peaktime_coef)
 	print "1000-Iteration-Average 80/20 Training Score(R^2 Value):", np.mean(average_train_score)
 	print "1000-Iteration-Average 80/20 Training STD:", np.std(average_train_score)
 	print "1000-Iteration-Average 80/20 Testing Score(R^2 Value):", np.mean(average_test_score)
